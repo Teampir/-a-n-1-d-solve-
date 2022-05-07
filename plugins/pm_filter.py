@@ -842,7 +842,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙿𝙰𝚂𝚃𝙴', callback_data='pastes'),
             InlineKeyboardButton("𝙸𝙼𝙰𝙶𝙴", callback_data='image')
             ],[
-            InlineKeyboardButton('⚚ 𝙱𝙰𝙲𝙺 ⚚', callback_data='start')
+            InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='mod'),
             InlineKeyboardButton('Page 1', callback_data='mod'),
             InlineKeyboardButton('Next', callback_data='ne')
         ]]
@@ -891,7 +891,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙵𝙸𝙻𝙴-𝚂𝚃𝙾𝚁𝙴', callback_data='newdata'),
             InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
             ],[
-            InlineKeyboardButton('« Back', callback_data='ne'),
+            InlineKeyboardButton('« Back', callback_data='nex'),
             InlineKeyboardButton('Page 3', callback_data='mod'),
             InlineKeyboardButton('Next', callback_data='nxe')
         ]]
@@ -906,7 +906,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('Alive', callback_data='alive')
             ],[
-            InlineKeyboardButton('« Back', callback_data='nex'),
+            InlineKeyboardButton('« Back', callback_data='nxe'),
             InlineKeyboardButton('Page 4', callback_data='mod'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
