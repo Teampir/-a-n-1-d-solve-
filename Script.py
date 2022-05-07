@@ -396,6 +396,10 @@ these are the extra features of this bot
 𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:
 """
 
+    NXE_TXT = """
+𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:
+"""
+
     COR_TXT = """Creators ❤
 - Thanks To Dan For His Awesome Library
 - Thanks To Mahesh For His Awesome Media-Search-bot
