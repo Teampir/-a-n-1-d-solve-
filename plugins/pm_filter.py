@@ -893,7 +893,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('« Back', callback_data='ne'),
             InlineKeyboardButton('Page 3', callback_data='mod'),
-            InlineKeyboardButton('Close ✗', callback_data='close_data')
+            InlineKeyboardButton('Next', callback_data='nxe')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -906,13 +906,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('Alive', callback_data='alive')
             ],[
-            InlineKeyboardButton('« Back', callback_data='ne'),
-            InlineKeyboardButton('Page 3', callback_data='mod'),
+            InlineKeyboardButton('« Back', callback_data='nex'),
+            InlineKeyboardButton('Page 4', callback_data='mod'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.nxe_TXT,
+            text=script.NXE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
