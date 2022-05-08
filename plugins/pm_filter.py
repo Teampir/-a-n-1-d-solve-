@@ -891,7 +891,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙵𝙸𝙻𝙴-𝚂𝚃𝙾𝚁𝙴', callback_data='newdata'),
             InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
             ],[
-            InlineKeyboardButton('« Back', callback_data='nex'),
+            InlineKeyboardButton('« Back', callback_data='ne'),
             InlineKeyboardButton('Page 3', callback_data='mod'),
             InlineKeyboardButton('Next', callback_data='nxe')
         ]]
