@@ -220,12 +220,12 @@ async def next_page(bot, query):
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("Movie", url="https://t.me/FPHDMOVE"),
-                InlineKeyboardButton("Series", url="https://t.me/FilimPiratesSeries")
+                InlineKeyboardButton("<a href={url}>{title}</a>", url="https://t.me/FPHDMOVE"),
+                InlineKeyboardButton("ɪɴꜰᴏ", url="<b>🏷 Title</b>: <a href={url}>{title}</a> \n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a> \n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)\n☀️ Languages : <code>{languages}</code>\n👥 Cast : <code>{cast}</code>\n📀 RunTime: {runtime} Minutes\n📆 Release Info : {release_date}\n🎛 Countries : <code>{countries}</code>")
             ])
 
     btn.insert(0, [
-        InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton("⚙️ Check bot pm first ⚙️", url=f"https://t.me/{temp.U_NAME}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -1451,8 +1451,8 @@ async def auto_filter(client, msg, spoll=False):
         )
 
     btn.insert(0, [
-        InlineKeyboardButton("Movie", url="https://t.me/FPHDMOVE"),
-        InlineKeyboardButton("Series", url="https://t.me/FilimPiratesSeries")
+        InlineKeyboardButton("<a href={url}>{title}</a>", url="https://t.me/FPHDMOVE"),
+        InlineKeyboardButton("ɪɴꜰᴏ", url="<b>🏷 Title</b>: <a href={url}>{title}</a> \n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a> \n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)\n☀️ Languages : <code>{languages}</code>\n👥 Cast : <code>{cast}</code>\n📀 RunTime: {runtime} Minutes\n📆 Release Info : {release_date}\n🎛 Countries : <code>{countries}</code>")
     ])
     btn.insert(0, [
         InlineKeyboardButton("Join Our Channel",url="https://t.me/FilmPiratesOfficial")
