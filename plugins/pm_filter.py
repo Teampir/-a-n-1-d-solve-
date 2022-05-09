@@ -786,6 +786,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('GROUP', callback_data='group'),
             InlineKeyboardButton('CHANNEL', callback_data='channel')
             ],[
+            InlineKeyboardButton('Home', callback_data='start'),
             InlineKeyboardButton('« Back', callback_data='start'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
@@ -840,7 +841,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("IMDB", callback_data='search')
             ],[
             InlineKeyboardButton('« Back', callback_data='mod'),
-            InlineKeyboardButton('Page 1', callback_data='mod'),
+            InlineKeyboardButton('Page 1', callback_data='start'),
             InlineKeyboardButton('Next', callback_data='ne')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -864,7 +865,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Kick', callback_data='zombies')
             ],[
             InlineKeyboardButton('« Back', callback_data='help'),
-            InlineKeyboardButton('Page 2', callback_data='mod'),
+            InlineKeyboardButton('Page 2', callback_data='start'),
             InlineKeyboardButton('Next', callback_data='nex')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -889,7 +890,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Stats', callback_data='stats')
             ],[
             InlineKeyboardButton('« Back', callback_data='ne'),
-            InlineKeyboardButton('Page 3', callback_data='mod'),
+            InlineKeyboardButton('Page 3', callback_data='start'),
             InlineKeyboardButton('Next', callback_data='nxe')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -905,7 +906,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Image", callback_data='image')
             ],[
             InlineKeyboardButton('« Back', callback_data='nex'),
-            InlineKeyboardButton('Page 4', callback_data='mod'),
+            InlineKeyboardButton('Page 4', callback_data='start'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1188,7 +1189,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "manuelfilter":
         buttons = [[
-            InlineKeyboardButton('« Back', callback_data='help'),
+            InlineKeyboardButton('« Back', callback_data='filter'),
             InlineKeyboardButton('𝙱𝚄𝚃𝚃𝙾𝙽𝚂', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1209,7 +1210,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "autofilter":
         buttons = [[
-            InlineKeyboardButton('« Back', callback_data='help')
+            InlineKeyboardButton('« Back', callback_data='filter')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1232,7 +1233,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
             InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
             ],[
-            InlineKeyboardButton('« Back', callback_data='help'),
+            InlineKeyboardButton('« Back', callback_data='mod'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
