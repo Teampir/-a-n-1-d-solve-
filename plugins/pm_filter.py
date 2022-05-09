@@ -824,8 +824,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('M-Filter', callback_data='manuelfilter'),
-            InlineKeyboardButton('A-Filter', callback_data='autofilter'),
+            InlineKeyboardButton('Filters', callback_data='filter'),
+            InlineKeyboardButton('Main', callback_data='main'),
             InlineKeyboardButton('Connection', callback_data='coct')
             ],[
             InlineKeyboardButton('Song', callback_data='songs'),
@@ -849,7 +849,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "ne":
         buttons = [[
             InlineKeyboardButton('Fun', callback_data='fun'), 
-            InlineKeyboardButton('Jsone', callback_data='son'),
+            InlineKeyboardButton('Json', callback_data='son'),
             InlineKeyboardButton('TTS', callback_data='ttss')
             ],[
             InlineKeyboardButton('Purge', callback_data='purges'),
@@ -873,17 +873,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "nex":
         buttons = [[
-            InlineKeyboardButton('𝚁𝙴𝙿𝙾𝚁𝚃', callback_data='report'),
-            InlineKeyboardButton('𝚈𝚃-𝚃𝙷𝚄𝙼𝙱', callback_data='ytthumb'),
-            InlineKeyboardButton('𝚂𝚃𝙸𝙲𝙺𝙴𝚁-𝙸𝙳', callback_data='sticker')
+            InlineKeyboardButton('Report', callback_data='report'),
+            InlineKeyboardButton('YT-Thumb', callback_data='ytthumb'),
+            InlineKeyboardButton('Sticker-id', callback_data='sticker')
             ],[
-            InlineKeyboardButton('𝙲𝙾𝚅𝙸𝙳', callback_data='corona'),
-            InlineKeyboardButton('𝙰𝚄𝙳𝙸𝙾-𝙱𝙾𝙾𝙺', callback_data='abook'),
-            InlineKeyboardButton('𝚄𝚁𝙻-𝚂𝙷𝙾𝚁𝚃', callback_data='urlshort')
+            InlineKeyboardButton('Covid', callback_data='corona'),
+            InlineKeyboardButton('Audio-Book', callback_data='abook'),
+            InlineKeyboardButton('URL-Short', callback_data='urlshort')
             ],[
-            InlineKeyboardButton('𝙶-𝚃𝚁𝙰𝙽𝚂', callback_data='gtrans'),
-            InlineKeyboardButton('𝙵𝙸𝙻𝙴-𝚂𝚃𝙾𝚁𝙴', callback_data='newdata'),
-            InlineKeyboardButton('𝚂𝚃𝙰𝚃𝚄𝚂', callback_data='stats')
+            InlineKeyboardButton('G-Trans', callback_data='gtrans'),
+            InlineKeyboardButton('File-Store', callback_data='newdata'),
+            InlineKeyboardButton('Stats', callback_data='stats')
             ],[
             InlineKeyboardButton('« Back', callback_data='ne'),
             InlineKeyboardButton('Page 3', callback_data='mod'),
@@ -943,6 +943,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ALIVE_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "main":
+        buttons = [[
+            InlineKeyboardButton('MODULES', callback_data='help'),
+            InlineKeyboardButton('EXTRA', callback_data='extra')
+            ],[
+            InlineKeyboardButton('ADMIN ONLY', callback_data='admin'),
+            InlineKeyboardButton('INFO', callback_data='cor')
+            ],[
+            InlineKeyboardButton('GROUP', callback_data='group'),
+            InlineKeyboardButton('CHANNEL', callback_data='channel')
+            ],[
+            InlineKeyboardButton('Home', callback_data='start'),
+            InlineKeyboardButton('Close', callback_data='close_data')
+            InlineKeyboardButton('Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.main_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "filter":
+        buttons = [[
+            InlineKeyboardButton('M-Filter', callback_data='manuelfilter'),
+            InlineKeyboardButton('A-Filter', callback_data='autofilter')
+            ],[
+            InlineKeyboardButton('« Back', callback_data='help'),
+            InlineKeyboardButton('Close ✗', callback_data='close_data')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.FILTER_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
