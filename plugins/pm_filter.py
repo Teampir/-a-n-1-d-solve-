@@ -765,6 +765,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ɪɴ yᴏᴜʀ ɢʀᴏᴜᴩ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            ],[
+            InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -959,7 +962,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('CHANNEL', callback_data='channel')
             ],[
             InlineKeyboardButton('Home', callback_data='start'),
-            InlineKeyboardButton('Close', callback_data='close_data')
+            InlineKeyboardButton('Close', callback_data='close_data'),
             InlineKeyboardButton('Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
