@@ -400,6 +400,7 @@ these are the extra features of this bot
 - Thanks To Mahesh For His Awesome Media-Search-bot
 - Thanks To <a href='https://github.com/trojanzhex'>Trojanz</a> for Their Awesome Unlimited Filter Bot And AutoFilterBoT
 - Thanks To <a href='https://t.me/TeamEvamaria'>Eva Mari Team</a> A amazing combination of this repo
+- Thanks To <a href='https://t.me/Aadhi011'>Aadhi</a> For Creating Extra featurs 
 - Thanks To <a href='https://t.me/sangeeth006'>Sangeeth</a> To create me 
 - Thanks To All Everyone In This Journey"""
 
