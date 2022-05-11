@@ -809,15 +809,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -879,15 +879,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -919,15 +919,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.9)
+        await asyncio.sleep(0.2)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -960,15 +960,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -992,15 +992,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -1022,15 +1022,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -1081,15 +1081,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.2)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
