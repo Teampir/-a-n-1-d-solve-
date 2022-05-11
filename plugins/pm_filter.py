@@ -809,15 +809,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -852,22 +852,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton(text="𝖢𝗅𝗈𝗌𝖾", callback_data="close_data")
         ]]
-        reply1 = await query.message.reply_text(
-            text="○○○"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="●○○"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="●●○"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="●●●"
-        )
-        await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)        
         await query.message.edit_text(        
             text="Select your required mode from below!",
@@ -895,15 +879,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
@@ -935,15 +919,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply1 = await query.message.reply_text(
             text="○○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply2 = await reply1.edit_text(
             text="●○○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply3 = await reply2.edit_text(
             text="●●○"
         )
-        await asyncio.sleep(0.5)
+        await asyncio.sleep(0.9)
         reply4 = await reply3.edit_text(
             text="●●●"
         )
