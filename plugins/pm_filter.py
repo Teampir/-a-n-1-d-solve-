@@ -1559,8 +1559,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton('𝐁𝐎𝐓 𝐏𝐌', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ 𝐘𝐄𝐒' if settings["botpm"] else '🗑️ chat',
-                                         callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
+                    InlineKeyboardButton('Chat',callback_data=f'setgs#chat#{settings["chat"]}#{grp_id}')
                 ],
                 [
                     InlineKeyboardButton('𝐅𝐈𝐋𝐄 𝐒𝐄𝐂𝐔𝐑𝐄',
