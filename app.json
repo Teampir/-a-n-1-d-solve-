@@ -92,7 +92,12 @@
         },
         "IMDB": {
             "description": "Imdb, the view of information when making True/False",
-            "required": false     
+            "required": false  
+        },
+        "CHAT_CHANNEL": {
+            "description": "Use as chat channel",
+            "value": "True",
+            "required": false
         },
         "IMDB_TEMPLATE": {
             "description": "Custom IMDB Template",        
