@@ -483,7 +483,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             elif settings['chat']:
-                await msg.reply(" 𝐇𝐞𝐲 👋 {} ❤ 😍\n\n📫 Your File is Ready.\n\nfiles here Gets Deleted With in 5 Minutes 📂 Mᴏᴠɪᴇ Nᴀᴍᴇ : {file.file_name}\n\n⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ : {get_size(file.file_size)}"
+                await msg.reply(" 𝐇𝐞𝐲 👋 {} ❤ 😍\n\n📫 Your File is Ready.\n\nfiles here Gets Deleted With in 5 Minutes 📂 Mᴏᴠɪᴇ Nᴀᴍᴇ : {file.file_name}\n\n⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ : {get_size(file.file_size)}")
         buttons = [
             [
                 InlineKeyboardButton('Support', url='https://t.me/FilmPiratesGroup'),
