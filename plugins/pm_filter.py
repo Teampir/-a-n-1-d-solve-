@@ -482,6 +482,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
+            elif settings['chat']:
+                await msg.reply(" 𝐇𝐞𝐲 👋 {} ❤ 😍\n\n📫 Your File is Ready.\n\nfiles here Gets Deleted With in 5 Minutes 📂 Mᴏᴠɪᴇ Nᴀᴍᴇ : {file.file_name}\n\n⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ : {get_size(file.file_size)}"
+        buttons = [
+            [
+                InlineKeyboardButton('Support', url='https://t.me/FilmPiratesGroup'),
+                InlineKeyboardButton('Channel', url='https://t.me/FilmPiratesOfficial')
+            ]
+            ]
+                return
             elif settings['botpm']:
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
@@ -1550,7 +1559,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton('𝐁𝐎𝐓 𝐏𝐌', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ 𝐘𝐄𝐒' if settings["botpm"] else '🗑️ 𝐍𝐎',
+                    InlineKeyboardButton('✅ 𝐘𝐄𝐒' if settings["botpm"] else '🗑️ chat',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
@@ -1766,7 +1775,7 @@ async def advantage_spell_chok(msg):
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
     m = await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(20)
+    await asyncio.sleep(10)
     await m.delete()
 
 async def manual_filters(client, message, text=False):
