@@ -793,7 +793,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "mod":
         buttons = [[
-            InlineKeyboardButton('MODULES', callback_data='help'),
+            InlineKeyboardButton('Tools', callback_data='help'),
             InlineKeyboardButton('EXTRA', callback_data='extra')
             ],[
             InlineKeyboardButton('ADMIN ONLY', callback_data='admin'),
