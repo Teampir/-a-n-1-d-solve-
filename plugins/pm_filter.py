@@ -74,6 +74,7 @@ from image.edit_5 import (  # pylint:disable=import-error
 
 BUTTONS = {}
 SPELL_CHECK = {}
+CH_FILTER = int(-1001501151830)
 FILTER_MODE = {}
 
 @Client.on_message(filters.command('autofilter'))
@@ -233,11 +234,6 @@ async def next_page(bot, query):
         )
     except MessageNotModified:
         pass
-    await query.answer('Hey👋 {u.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️')
-    await asyncio.sleep(600)
-    await hehe.delete()
-    await message.delete()
-
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
@@ -486,13 +482,38 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                await client.send_cached_media(
-                    chat_id=query.from_user.id,
+                ms = await client.send_cached_media(
+                    chat_id=CH_FILTER,
                     file_id=file_id,
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
                 )
-                await query.answer('Check PM, I have sent files in pm😇 നിങ്ങളുടെ സിനിമ പേഴ്സണൽ ആയിട്ട് അയച്ചിട്ടുണ്ട്..', show_alert=True)
+                msg1 = await query.message.reply(
+                f'<b>Hey 👋{query.from_user.mention}\n\n'
+                f'<b>📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
+                f'<b>🎬 Mᴏᴠɪᴇ Nᴀᴍᴇ: {title}</b>\n\n'
+                f'<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>\n\n'
+                f'<b>📂 Mᴏᴠɪᴇ Tʏᴘᴇ: {type}</b>\n\n'
+                '<code>THis file will be deleted in 5 minutes.!</code>',
+                True,
+                'html',
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("🔰𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐍𝐎𝐖🔰", url = ms.link)
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{AUTH_CHANNEL}")
+                        ]
+                    ]
+                )
+            )
+            await query.answer('Check Out The Chat',show_alert=True)
+            await asyncio.sleep(1000)
+            await msg1.delete()
+            await msg.delete()
+            del msg1, msg
+
         except UserIsBlocked:
             await query.answer('You Are Blocked to use me', show_alert=True)
         except PeerIdInvalid:
@@ -1687,22 +1708,26 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"<b><i>Movie Name : {search}\nHey👋 {message.from_user.mention} Your Requested 📽️Film\nGroup : {message.chat.title}</i></b>"
     if imdb and imdb.get('poster'):
         try:
-            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            with_imdb = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(600)
-            await hehe.delete()            
+            await with_imdb.edit(f"⚙️Hey👋 {query.from_user.first_name} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)            
+            imdb = await message.reply_photo(photo="https://telegra.ph/file/f502a6d28e6f1ea59574f.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(600)
+            await imdb.edit(f"⚙️Hey👋 {query.from_user.first_name} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)          
+            text = await message.reply_photo(photo="https://telegra.ph/file/f502a6d28e6f1ea59574f.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(600)
+            await text.edit(f"⚙️Hey👋 {query.from_user.first_name} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
     else:
-        fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
+        no_imdb = await message.reply_photo(photo="https://telegra.ph/file/f502a6d28e6f1ea59574f.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(600)
-        await fuk.delete()
+        await no_imdb.edit(f"⚙️Hey👋 {query.from_user.first_name} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+    if spoll:
+        await msg.message.delete()
       
 
 async def advantage_spell_chok(msg):
