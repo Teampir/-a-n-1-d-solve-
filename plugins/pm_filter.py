@@ -237,7 +237,6 @@ async def next_page(bot, query):
     await asyncio.sleep(600)
     await hehe.delete()
     await message.delete()
-    await query.answer('Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ <a href={url}>{title}</a> Cʟᴏꜱᴇᴅ 🗑️')
 
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
@@ -1690,21 +1689,25 @@ async def auto_filter(client, msg, spoll=False):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(600)
-            await hehe.delete()            
+            await hehe.delete()      
+            await query.answer('Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️')      
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)            
+            await asyncio.sleep(600)    
+            await query.answer('Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️')        
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(1200)            
+            await asyncio.sleep(600)   
+            await query.answer('Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️')         
     else:
         fuk = await message.reply_text(text=cap, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(600)
         await fuk.delete()
-
+        await query.answer('Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️')
+      
 
 async def advantage_spell_chok(msg):
     query = re.sub(
