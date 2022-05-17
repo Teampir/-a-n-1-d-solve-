@@ -1722,16 +1722,16 @@ async def auto_filter(client, msg, spoll=False):
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            imdb = await message.reply_photo(photo="https://telegra.ph/file/f502a6d28e6f1ea59574f.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            imdb = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(600)
             await imdb.edit(f"⚙️Hey👋 {query.from_user.first_name} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
         except Exception as e:
             logger.exception(e)
-            text = await message.reply_photo(photo="https://telegra.ph/file/f502a6d28e6f1ea59574f.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            text = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(600)
             await text.edit(f"⚙️Hey👋 {query.from_user.first_name} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
     else:
-        no_imdb = await message.reply_photo(photo="https://telegra.ph/file/f502a6d28e6f1ea59574f.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        no_imdb = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(600)
         await no_imdb.edit(f"⚙️Hey👋 {query.from_user.first_name} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
     if spoll:
