@@ -237,6 +237,7 @@ async def next_page(bot, query):
     await asyncio.sleep(600)
     await hehe.delete()
     await message.delete()
+    await query.answer('Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ <a href={url}>{title}</a> Cʟᴏꜱᴇᴅ 🗑️')
 
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
