@@ -395,12 +395,12 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    '𝐁𝐎𝐓 𝐏𝐌',
+                    'Bot PM',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    'Chat',
-                    callback_data=f'setgs#chat#{settings["chat"]}#{grp_id}',
+                    '✅ Yes' if settings["botpm"] else '❌ No',
+                    callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
             ],
             [
