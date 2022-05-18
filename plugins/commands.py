@@ -187,11 +187,38 @@ async def start(client, message):
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
-            msg = await client.send_cached_media(
-                chat_id=message.from_user.id,
-                file_id=file_id,
-                protect_content=True if pre == 'filep' else False,
+            ms = await client.send_cached_media(
+                    chat_id=CH_FILTER,
+                    file_id=file_id,
+                    caption=f_caption,
+                    protect_content=True if ident == "filep" else False 
                 )
+                msg1 = await query.message.reply(
+                f'<b>Hey 👋{query.from_user.mention}\n\n'
+                f'<b>📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
+                f'<b>🎬 Mᴏᴠɪᴇ Nᴀᴍᴇ: {title}</b>\n\n'
+                f'<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>\n\n'
+                f'<b>📂 Mᴏᴠɪᴇ Tʏᴘᴇ: {type}</b>\n\n'
+                '<code>THis file will be deleted in 5 minutes.!</code>',
+                True,
+                'html',
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("🔰𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐍𝐎𝐖🔰", url = ms.link)
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{CH_FILTER}")
+                        ]
+                    ]
+                )
+            )
+            await query.answer('Check Out The Chat',show_alert=True)
+            await asyncio.sleep(1000)
+            await msg1.delete()
+            await msg.delete()
+            del msg1, msg
+
             filetype = msg.media
             file = getattr(msg, filetype)
             title = file.file_name
@@ -220,7 +247,7 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
     await client.send_cached_media(
-        chat_id=message.from_user.id,
+        chat_id=CH_FILTER,
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
