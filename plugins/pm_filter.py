@@ -478,7 +478,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
                 return
-            elif:
+            elif settings['botpm']:
                 send_file = await client.send_cached_media(
                     chat_id=FILE_CHANNEL_ID,
                     file_id=file_id,
@@ -498,7 +498,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await asyncio.sleep(300)
                 await send_file.delete()
                 await bb.delete()
-            else P_TTI_SHOW_OFF:
+            else:
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
                 return
 
