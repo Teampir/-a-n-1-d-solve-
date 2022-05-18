@@ -17,7 +17,7 @@ import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
-CH_FILTER = int(-1001501151830)
+FILE_CHANNEL_ID = int(-1001501151830)
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
@@ -189,7 +189,7 @@ async def start(client, message):
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
             msg = await client.send_cached_media(
-                chat_id=message.from_user.id,
+                chat_id=FILE_CHANNEL_ID,
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
                 )
@@ -221,7 +221,7 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
     await client.send_cached_media(
-        chat_id=message.from_user.id,
+        chat_id=FILE_CHANNEL_ID,
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
