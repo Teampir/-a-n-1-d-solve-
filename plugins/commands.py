@@ -186,12 +186,10 @@ async def start(client, message):
 
     files_ = await get_file_details(file_id)           
     if not files_:
-        pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
-                file_id=file_id,
-                protect_content=True if pre == 'filep' else False,
+                file_id=file_id
                 )
             filetype = msg.media
             file = getattr(msg, filetype)
@@ -224,8 +222,35 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        protect_content=True if pre == 'filep' else False,
         )
+            
+        try:
+            if AUTH_CHANNEL and not await is_subscribed(client, query):
+                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+                return
+            elif settings['botpm']:
+                send_file = await client.send_cached_media(
+                    chat_id=FILE_CHANNEL_ID,
+                    file_id=file_id,
+                    caption=f'<b>🎥{title}</b>\n\n<code>🗯 {size}</code>\n\n<code>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</code>\n\n<b>{greeting} {query.from_user.mention}✨</b>\n\n<i>Because of copyright this file will be deleted from here within 5 minutesSo forward it to anywhere before downloading!</i>\n\n<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഈ ഫയൽ 5 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ്അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>\n\n<b><b>🔰 Powered By:</b>{query.message.chat.title}</b>',
+                    reply_markup = InlineKeyboardMarkup(buttons)   
+                    )
+                btn = [[
+                    InlineKeyboardButton("🔥 GET FILE 🔥", url=f'{send_file.link}')
+                    ],[
+                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{FILE_CHANNEL_ID}")
+                ]]
+                reply_markup = InlineKeyboardMarkup(btn)
+                bb = await query.message.reply_text(
+                    text=script.ANYFILECAPTION_TXT.format(file_name=title, file_size=size, file_caption=f_caption),
+                reply_markup = reply_markup
+                )
+                await asyncio.sleep(300)
+                await send_file.delete()
+                await bb.delete()
+            else:
+                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+                return
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
