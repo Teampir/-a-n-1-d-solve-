@@ -498,9 +498,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await asyncio.sleep(300)
                 await send_file.delete()
                 await bb.delete()
-            else:
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
-                return
 
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
