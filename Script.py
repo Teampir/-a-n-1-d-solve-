@@ -391,6 +391,12 @@ these are the extra features of this bot
 𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:
 """
 
+    ANYFILECAPTION_TXT = """<b>📽 File Name:</b> <code> {file_name}</code>     
+   
+<b>🗯 Size:</b> <code>{file_size}</code>
+
+<code>⏳ Error?</code> <a href='https://t.me/+5J5tOc5rv9FiMzA1'>CLICK HERE TO JOIN & TRY AGAIN!</a>'>CLICK HERE TO JOIN & TRY AGAIN!</a>"""
+
     NXE_TXT = """
 𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:
 """
