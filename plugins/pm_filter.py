@@ -74,7 +74,6 @@ from image.edit_5 import (  # pylint:disable=import-error
 
 BUTTONS = {}
 SPELL_CHECK = {}
-CH_FILTER = int(-1001501151830)
 FILTER_MODE = {}
 
 @Client.on_message(filters.command('autofilter'))
@@ -449,7 +448,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(alert,show_alert=True)
 
     if query.data.startswith("file"):
-        FILE_CHANNEL_ID = int(-1001731956857)
+        FILE_CHANNEL_ID = int(-1001501151830)
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
