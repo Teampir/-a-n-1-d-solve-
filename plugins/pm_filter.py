@@ -203,12 +203,14 @@ async def next_page(bot, query):
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("🚶‍♀️ 𝗕𝗮𝗰𝗸", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(text="🍿Update🍿", url=f"https://t.me/FilmPiratesOfficial"),
              InlineKeyboardButton(f"📑 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📑 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="🍿Update🍿", url=f"https://t.me/FilmPiratesOfficial"),
              InlineKeyboardButton("𝗡𝗲𝘅𝘁 ▶️", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
@@ -219,7 +221,7 @@ async def next_page(bot, query):
             )
     btn.insert(0,
             [
-                InlineKeyboardButton(f'💫 Tips', 'tips'),
+                InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
                 InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
             ])
 
@@ -491,6 +493,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await asyncio.sleep(300)
                 await send_file.delete()
                 await bb.delete()
+                await text.edit(f"⚙️Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
             await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
@@ -1630,6 +1633,7 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="🍿Update🍿", url=f"https://t.me/FilmPiratesOfficial"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
@@ -1638,7 +1642,7 @@ async def auto_filter(client, msg, spoll=False):
         )
 
     btn.insert(0, [
-        InlineKeyboardButton(f'💫 Tips', 'tips'),
+        InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
         InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
     ])
     btn.insert(0, [
@@ -1682,27 +1686,31 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b><i>Movie Name : {search}\nHey👋 {message.from_user.mention} Your Requested 📽️Film\nGroup : {message.chat.title}</i></b>"
+        cap = f"<b>🎬 Title:</b> {search}\n</b>\n<b><✍️ Note:</b> <s>This message will be Auto-deleted after 5 minute to avoid copyright issues.</s>"
     if imdb and imdb.get('poster'):
         try:
-            with_imdb = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
-            await with_imdb.edit(f"⚙️Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(300)
+            await hehe.delete()
+            await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            imdb = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
-            await imdb.edit(f"⚙️Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+            hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(300)
+            await hmm.delete()
+            await message.delete()
         except Exception as e:
             logger.exception(e)
-            text = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(600)
-            await text.edit(f"⚙️Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+            fek = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(300)
+            await fek.delete()
+            await msg.delete()
     else:
-        no_imdb = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(600)
-        await no_imdb.edit(f"⚙️Hey👋 {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/8b42f6caf6ef5fd76766f.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(300)
+        await fuk.delete()
+        await msg.delete()
     if spoll:
         await msg.message.delete()
       
