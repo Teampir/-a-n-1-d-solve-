@@ -482,12 +482,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption
                     )
                 btn = [[
-                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{CH_FILTER}"),
-                    InlineKeyboardButton("🔰𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐍𝐎𝐖🔰", url = {send_file.link})
+                    InlineKeyboardButton(f'ɪɴꜰᴏ', 'ᴄʜᴜᴍᴍᴀ')
+                    ],[
+                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url ='https://t.me/+_Q75jtkc2Y0wYjRl')
+                    ],[
+                    InlineKeyboardButton("📥Download📥", url =f"{send_file.link}")
                 ]]
                 reply_markup = InlineKeyboardMarkup(btn)
                 bb = await query.message.reply_text(
-                    text = f"Hey 👋{query.from_user.mention}\n\n📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n📂 Mᴏᴠɪᴇ Tʏᴘᴇ: {type}</b>\n\n<code>THis file will be deleted in 5 minutes.!</code>\n🎥 Film Nᴀᴍᴇ: {title}</b>\n\n⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>",
+                    text = f"Hey 👋{query.from_user.mention}\n\n<b>📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇</b>\n\n<code>THis file will be deleted in 5 minutes.!</code>\n<b>🎥 Film Nᴀᴍᴇ: {title}</b>\n\n<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>",
                     reply_markup = reply_markup
                 )
                 await asyncio.sleep(300)
