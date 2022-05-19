@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/AJAX.png" alt="ᴛᴇʟᴇ-ᴩɪʀᴀᴛᴇ-ꜰᴇᴀᴛᴜʀᴇꜱ">
+  <img src="assets/.png" alt="ᴛᴇʟᴇ-ᴩɪʀᴀᴛᴇ-ꜰᴇᴀᴛᴜʀᴇꜱ">
 </p>
 <h1 align="center">
   <b>ᴩɪʀᴀᴛᴇꜱ-ᴇxᴛʀᴀ-𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂</b>
@@ -56,7 +56,7 @@ You can deploy this bot anywhere.
 <summary>Deploy To Heroku</summary>
 <br>
 <p>
-<a href="https://heroku.com/deploy?template=https://github.com/Mpirates/allinone">
+<a href="https://heroku.com/deploy?template=https://github.com/Distenyteam/ql">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
