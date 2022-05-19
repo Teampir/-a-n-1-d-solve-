@@ -74,6 +74,7 @@ from image.edit_5 import (  # pylint:disable=import-error
 
 BUTTONS = {}
 SPELL_CHECK = {}
+CH_FILTER = int(-1001501151830)
 FILTER_MODE = {}
 
 @Client.on_message(filters.command('autofilter'))
@@ -476,11 +477,37 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                await client.send_cached_media(
-                    chat_id=query.from_user.id,
+                ms = await client.send_cached_media(
+                    chat_id=CH_FILTER,
                     file_id=file_id,
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
+                )
+                msg1 = await query.message.reply(
+                f'<b>Hey 👋{query.from_user.mention}\n\n'
+                f'<b>📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
+                f'<b>🎬 Mᴏᴠɪᴇ Nᴀᴍᴇ: {title}</b>\n\n'
+                f'<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>\n\n'
+                f'<b>📂 Mᴏᴠɪᴇ Tʏᴘᴇ: {type}</b>\n\n'
+                '<code>THis file will be deleted in 5 minutes.!</code>',
+                True,
+                'html',
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("🔰𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐍𝐎𝐖🔰", url = ms.link)
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{AUTH_CHANNEL}")
+                        ]
+                    ]
+                )
+            )
+            await query.answer('Check Out The Chat',show_alert=True)
+            await asyncio.sleep(300)
+            await msg1.delete()
+            await ms.delete()
+            del msg1, ms
                 )
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
