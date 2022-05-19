@@ -476,38 +476,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                ms = await client.send_cached_media(
+                send_file = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f_caption,
-                    protect_content=True if ident == "filep" else False 
+                    caption=f_caption
+                    )
+                btn = [[
+                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
+                ]]
+                reply_markup = InlineKeyboardMarkup(btn)
+                bb = await query.message.reply_text(
+                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
+                    reply_markup = reply_markup
                 )
-                msg1 = await query.message.reply(
-                f'<b>Hey 👋{query.from_user.mention}\n\n'
-                f'<b>📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n'
-                f'<b>🎬 Mᴏᴠɪᴇ Nᴀᴍᴇ: {title}</b>\n\n'
-                f'<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>\n\n'
-                f'<b>📂 Mᴏᴠɪᴇ Tʏᴘᴇ: {type}</b>\n\n'
-                '<code>THis file will be deleted in 5 minutes.!</code>',
-                True,
-                'html',
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("🔰𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐍𝐎𝐖🔰", url = ms.link)
-                        ],
-                        [
-                            InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{AUTH_CHANNEL}")
-                        ]
-                    ]
-                )
-            )
-            await query.answer('Check Out The Chat',show_alert=True)
-            await asyncio.sleep(300)
-            await msg1.delete()
-            await ms.delete()
-            del msg1, ms
-                
+                await asyncio.sleep(300)
+                await send_file.delete()
+                await bb.delete()
             await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
