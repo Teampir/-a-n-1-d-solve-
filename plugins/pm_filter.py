@@ -203,14 +203,12 @@ async def next_page(bot, query):
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("🚶‍♀️ 𝗕𝗮𝗰𝗸", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(text=f"Check PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(f"📑 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"📑 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text=f"Check PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton("𝗡𝗲𝘅𝘁 ▶️", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
@@ -221,12 +219,12 @@ async def next_page(bot, query):
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("Movie", url="https://t.me/FPHDMOVE"),
-                InlineKeyboardButton("Series", url="https://t.me/FilimPiratesSeries")
+                InlineKeyboardButton(f'💫 Tips', 'tips'),
+                InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
             ])
 
     btn.insert(0, [
-        InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton(f'🔮 {search} 🔮', 'dupe')
     ])
     try:
         await query.edit_message_reply_markup(
@@ -482,11 +480,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption
                     )
                 btn = [[
-                    InlineKeyboardButton("💥JOIN CHANNEL💥", url='https://t.me/+OwPc0ngwyCY4M2I1')
+                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{CH_FILTER}"),
+                    InlineKeyboardButton("🔰𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 𝐍𝐎𝐖🔰", url = {send_file.link})
                 ]]
                 reply_markup = InlineKeyboardMarkup(btn)
                 bb = await query.message.reply_text(
-                    text = f"Hi click the below link and download the movies🍿\n\nERROR? Click the join channel button and try again \n\n{send_file.link}",
+                    text = f"Hey 👋{query.from_user.mention}\n\n📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇\n\n📂 Mᴏᴠɪᴇ Tʏᴘᴇ: {type}</b>\n\n<code>THis file will be deleted in 5 minutes.!</code>\n🎥 Film Nᴀᴍᴇ: {title}</b>\n\n⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>",
                     reply_markup = reply_markup
                 )
                 await asyncio.sleep(300)
@@ -1549,8 +1548,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('𝐁𝐎𝐓 𝐏𝐌', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ 𝐘𝐄𝐒' if settings["botpm"] else '🗑️ 𝐍𝐎',
+                    InlineKeyboardButton('Filter', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('PM' if settings["botpm"] else 'CHAT',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
@@ -1631,21 +1630,19 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}")]
+            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
         )
 
     btn.insert(0, [
-        InlineKeyboardButton("Movie", url="https://t.me/FPHDMOVE"),
-        InlineKeyboardButton("Series", url="https://t.me/FilimPiratesSeries")
+        InlineKeyboardButton(f'💫 Tips', 'tips'),
+        InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
     ])
     btn.insert(0, [
-        InlineKeyboardButton("Join Our Channel",url="https://t.me/FilmPiratesOfficial")
+        InlineKeyboardButton(f'🔮 {search} 🔮', 'dupe')
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
