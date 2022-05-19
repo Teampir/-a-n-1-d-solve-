@@ -437,6 +437,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
     elif "alertmessage" in query.data:
+        elif "alertmessage" in query.data:
         grp_id = query.message.chat.id
         i = query.data.split(":")[1]
         keyword = query.data.split(":")[2]
@@ -445,70 +446,52 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alerts = ast.literal_eval(alerts)
             alert = alerts[int(i)]
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
-            await query.answer(alert,show_alert=True)
-
+            await query.answer(alert, show_alert=True)
     if query.data.startswith("file"):
-        FILE_CHANNEL_ID = int(-1001501151830)
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
             return await query.answer('No such file exist.')
         files = files_[0]
         title = files.file_name
-        size=get_size(files.file_size)
-        mention = query.from_user.mention
-        f_caption=files.caption
+        size = get_size(files.file_size)
+        f_caption = files.caption
+        settings = await get_settings(query.message.chat.id)
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
-                buttons = [[
-                   InlineKeyboardButton(text=f"{query.message.chat.title}", url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                  ]]
+                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
+                                                       file_size='' if size is None else size,
+                                                       file_caption='' if f_caption is None else f_caption)
             except Exception as e:
                 logger.exception(e)
-            f_caption=f_caption
-            size = size
-            mention = mention
+            f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-            size = f"{files.file_size}"
-            mention = f"{query.from_user.mention}"
-            
+
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             elif settings['botpm']:
-                send_file = await client.send_cached_media(
-                    chat_id=FILE_CHANNEL_ID,
+                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                return
+            else:
+                await client.send_cached_media(
+                    chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption=f'<b>🎥{title}</b>\n\n<code>🗯 {size}</code>\n\n<code>=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=</code>\n\n<b>{greeting} {query.from_user.mention}✨</b>\n\n<i>Because of copyright this file will be deleted from here within 5 minutesSo forward it to anywhere before downloading!</i>\n\n<i>കോപ്പിറൈറ്റ് ഉള്ളതുകൊണ്ട് ഈ ഫയൽ 5 മിനിറ്റിനുള്ളിൽ ഇവിടെനിന്നും ഡിലീറ്റ് ആകുന്നതാണ്അതുകൊണ്ട് ഇവിടെ നിന്നും മറ്റെവിടെക്കെങ്കിലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക!</i>\n\n<b><b>🔰 Powered By:</b>{query.message.chat.title}</b>',
-                    reply_markup = InlineKeyboardMarkup(buttons)   
-                    )
-                btn = [[
-                    InlineKeyboardButton("🔥 GET FILE 🔥", url=f'{send_file.link}')
-                    ],[
-                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url = f"{FILE_CHANNEL_ID}")
-                ]]
-                reply_markup = InlineKeyboardMarkup(btn)
-                bb = await query.message.reply_text(
-                    text=script.ANYFILECAPTION_TXT.format(file_name=title, file_size=size, file_caption=f_caption),
-                reply_markup = reply_markup
+                    caption=f_caption,
+                    protect_content=True if ident == "filep" else False 
                 )
-                await asyncio.sleep(300)
-                await send_file.delete()
-                await bb.delete()
-
+                await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
-            await query.answer('Unblock the bot mahn !',show_alert = True)
+            await query.answer('Unblock the bot mahn !', show_alert=True)
         except PeerIdInvalid:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
+            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
-            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={file_id}")
-
+            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒",show_alert=True)
+            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
@@ -516,25 +499,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
             return await query.answer('No such file exist.')
         files = files_[0]
         title = files.file_name
-        size=get_size(files.file_size)
-        f_caption=files.caption
+        size = get_size(files.file_size)
+        f_caption = files.caption
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
-                buttons = [[
-                   InlineKeyboardButton(text=f"{query.message.chat.title}", url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-                  ]]
+                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
+                                                       file_size='' if size is None else size,
+                                                       file_caption='' if f_caption is None else f_caption)
             except Exception as e:
                 logger.exception(e)
-                f_caption=f_caption
+                f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
         await query.answer()
         await client.send_cached_media(
-            chat_id=FILE_CHANNEL_ID,
+            chat_id=query.from_user.id,
             file_id=file_id,
-            caption=f_caption
-            )
+            caption=f_caption,
+            protect_content=True if ident == 'checksubp' else False
+        )
     elif query.data == "removebg":
         await query.message.edit_text(
             "**Select required mode**ㅤㅤㅤㅤ",
