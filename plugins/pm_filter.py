@@ -874,7 +874,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Video", callback_data='video')
             ],[
             InlineKeyboardButton('PIN', callback_data='pin'), 
-            InlineKeyboardButton('Paste', callback_data='pastes'),
+            InlineKeyboardButton('Stats', callback_data='stats'),
             InlineKeyboardButton("IMDB", callback_data='search')
             ],[
             InlineKeyboardButton('« Back', callback_data='mod'),
@@ -956,7 +956,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('G-Trans', callback_data='gtrans'),
             InlineKeyboardButton('File-Store', callback_data='newdata'),
-            InlineKeyboardButton('Stats', callback_data='stats')
+            InlineKeyboardButton('Paste', callback_data='pastes')
             ],[
             InlineKeyboardButton('« Back', callback_data='ne'),
             InlineKeyboardButton('Page 3', callback_data='start'),
@@ -988,7 +988,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "nxe":
         buttons = [[
             InlineKeyboardButton('Alive', callback_data='alive'),
-            InlineKeyboardButton("Image", callback_data='image')
+            InlineKeyboardButton("Image", callback_data='image'),
+            InlineKeyboardButton("Carbon", callback_data='carbon')
             ],[
             InlineKeyboardButton('« Back', callback_data='nex'),
             InlineKeyboardButton('Page 4', callback_data='start'),
@@ -1432,6 +1433,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text=script.STICKER_TXT,
             disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "carbon":
+        buttons = [[
+            InlineKeyboardButton('« Back', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CARBON_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
