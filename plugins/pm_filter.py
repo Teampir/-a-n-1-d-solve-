@@ -479,7 +479,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 send_file = await client.send_cached_media(
                     chat_id=CH_FILTER,
                     file_id=file_id,
-                    caption=f_caption
+                    text=f'𝐇𝐞𝐲 👋 {message.from_user.mention} 😍📽Film {file_name} ⚙Movie Size {file_size}\n\n⚠️ കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 5 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!!\n\nഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!!\nFILES FORWARD TO YOUR SAVED MESSAGES\n\nAll files here Gets Deleted With in 5 Minutes\n\n╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n♻️ 𝙅𝙊𝙄𝙉 :- @FilmPiratesOfficial\n♻️ 𝙅𝙊𝙄𝙉 :- @AdBotUpdate\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝'
                     )
                 btn = [[
                     InlineKeyboardButton(f'ɪɴꜰᴏ', callback_data='iq')
