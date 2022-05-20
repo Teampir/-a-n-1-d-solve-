@@ -85,17 +85,17 @@ async def fil_mod(client, message):
       try: 
          args = message.text.split(None, 1)[1].lower() 
       except: 
-         return await message.reply("**𝙸𝙽𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴 𝙲𝙾𝙼𝙼𝙰𝙽𝙳...**")
+         return await message.reply("**ɪɴᴄᴏᴍᴩʟᴇᴛᴇ ᴄᴏᴍᴍᴀɴᴅ...**")
       
-      m = await message.reply("**𝚂𝙴𝚃𝚃𝙸𝙽𝙶.../**")
+      m = await message.reply("**ꜱᴇᴛᴛɪɴɢ...**")
 
       if args in mode_on:
           FILTER_MODE[str(message.chat.id)] = "True" 
-          await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙴𝙽𝙰𝙱𝙻𝙴𝙳**")
+          await m.edit("**ᴀᴜᴛᴏꜰɪʟᴛᴇʀ ᴇɴᴀʙʟᴇᴅ**")
       
       elif args in mode_of:
           FILTER_MODE[str(message.chat.id)] = "False"
-          await m.edit("**𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝙳𝙸𝚂𝙰𝙱𝙻𝙴𝙳**")
+          await m.edit("**ᴀᴜᴛᴏꜰɪʟᴛᴇʀ ᴅɪꜱᴀʙʟᴇᴅ**")
       else:
           await m.edit("𝚄𝚂𝙴 :- /autofilter on 𝙾𝚁 /autofilter off")
 
@@ -226,7 +226,7 @@ async def next_page(bot, query):
             ])
 
     btn.insert(0, [
-        InlineKeyboardButton(f'🔮 {search} 🔮', 'dupe')
+        InlineKeyboardButton(f'🎭{search}🎭', 'dupe')
     ])
     try:
         await query.edit_message_reply_markup(
@@ -1635,13 +1635,13 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🎯1/{round(int(total_results) / 10)}", callback_data="pages"),
+            [InlineKeyboardButton(text=f"❄️1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="🍿Update🍿", url=f"https://t.me/FilmPiratesOfficial"),
              InlineKeyboardButton(text="◎ᑎE᙭T◎", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🎯1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="❄️1/1", callback_data="pages")]
         )
 
     btn.insert(0, [
@@ -1649,7 +1649,7 @@ async def auto_filter(client, msg, spoll=False):
         InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
     ])
     btn.insert(0, [
-        InlineKeyboardButton(f'🔮 {search} 🔮', 'dupe')
+        InlineKeyboardButton(f'🎭{search}🎭', 'dupe')
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
@@ -1719,7 +1719,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("I couldn't find any movie in that name.")
+        k = await msg.reply("I couldn't find any movie in that name 😔.")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -1762,6 +1762,10 @@ async def advantage_spell_chok(msg):
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
+        InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/FilmPiratesOfficial"),
+        InlineKeyboardButton(text="ꜱᴇʀɪᴇꜱ", url=f"https://t.me/FilimPiratesSeries"),
+        InlineKeyboardButton(text="ɪɴꜰᴏ", url=f"https://t.me/FilimPiratesSeries")
+        ],[
         InlineKeyboardButton(
             text=movie.strip(),
             callback_data=f"spolling#{user}#{k}",
