@@ -1189,9 +1189,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "iq":
-        await query.message.edit_text(
-            "Test", show_alert=True)
-        )
+        await query.message.edit_text("Test", show_alert=True)
+     
     elif query.data == "corona":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='nex')
