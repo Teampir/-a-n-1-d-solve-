@@ -7,8 +7,7 @@ class script(object):
 • Build Version : V2.1.0 (BETA)
 • Speciality : Movie Provider
 𝖢𝗅𝗂𝖼𝗄 Help or /help 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌."""
-    HELP_TXT = """𝙷𝙴𝚈 {}
-𝗛ᴇʟʟᴏ {}"""
+    HELP_TXT = """𝗛ᴇʟʟᴏ {}"""
     ABOUT_TXT = """<b>➥ My name: {}
 ➥ Creator: <a href='https://t.me/The_user_death'>ᴩʀᴏꜰᴇꜱᴇʀ</a>
 ➥ Library: Pyrogram
