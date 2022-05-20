@@ -407,7 +407,7 @@ async def settings(client, message):
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    'PM' if settings["botpm"] else 'CHAT',
+                    'PM' else settings["botpm"] if 'CHAT',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
             ],
