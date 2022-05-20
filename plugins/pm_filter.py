@@ -482,7 +482,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption
                     )
                 btn = [[
-                    InlineKeyboardButton(f'ɪɴꜰᴏ', 'ᴄʜᴜᴍᴍᴀ')
+                    InlineKeyboardButton(f'ɪɴꜰᴏ', callback_data='iq')
                     ],[
                     InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url ='https://t.me/+_Q75jtkc2Y0wYjRl')
                     ],[
@@ -1186,6 +1186,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.WHOIS_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
+        )
+    elif query.data == "iq":
+        await query.message.edit_text(
+            "Test", show_alert=True)
         )
     elif query.data == "corona":
         buttons = [[
