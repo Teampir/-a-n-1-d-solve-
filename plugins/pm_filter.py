@@ -459,7 +459,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         f_caption=files.caption
         if CUSTOM_FILE_CAPTION:
             try:
-                f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, file_size=size, file_caption=f_caption)
+                f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
+                                                       file_size='' if size is None else size,
+                                                       file_caption='' if f_caption is None else f_caption)
             except Exception as e:
                 logger.exception(e)
             f_caption=f_caption
@@ -480,9 +482,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption
                     )
                 btn = [[
-                    InlineKeyboardButton("📥Download📥", url =f"{send_file.link}")
+                    InlineKeyboardButton(f'ɪɴꜰᴏ', callback_data='iq')
                     ],[
-                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url ='https://t.me/+WdzPGpX5rjI3MWU1')
+                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url ='https://t.me/+_Q75jtkc2Y0wYjRl')
+                    ],[
+                    InlineKeyboardButton("📥Download📥", url =f"{send_file.link}")
                 ]]
                 reply_markup = InlineKeyboardMarkup(btn)
                 bb = await query.message.reply_text(
@@ -492,6 +496,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await asyncio.sleep(300)
                 await send_file.delete()
                 await bb.delete()
+            await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
         except PeerIdInvalid:
