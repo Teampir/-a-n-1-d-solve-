@@ -1621,9 +1621,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+                                         callback_data=f'setgs#redirected_env#{settings["redirected_env"]}#{grp_id}',),
+                    InlineKeyboardButton('👤 PM' if settings["redirected_env"] == "PM" else '📄 Chat',
+                                         callback_data=f'setgs#redirected_env#{settings["redirected_env"]}#{grp_id}',),
                 ],
                 [
                     InlineKeyboardButton('Filter', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
