@@ -8,7 +8,7 @@ from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, CUSTOM_FILE_CAPTION, BATCH_FILE_CAPTION, PROTECT_CONTENT
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, CUSTOM_FILE_CAPTION, BATCH_FILE_CAPTION, PROTECT_CONTENT, REDIRECT_TO
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
 import re
@@ -393,21 +393,30 @@ async def settings(client, message):
         buttons = [
             [
                 InlineKeyboardButton(
-                    '𝐅𝐈𝐋𝐓𝐄𝐑 𝐁𝐔𝐓𝐓𝐎𝐍',
+                    'Filter Button',
                     callback_data=f'setgs#button#{settings["button"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '𝐒𝐈𝐍𝐆𝐋𝐄' if settings["button"] else '𝐃𝐎𝐔𝐁𝐋𝐄',
+                    'Single' if settings["button"] else 'Double',
                     callback_data=f'setgs#button#{settings["button"]}#{grp_id}',
+                ),
+            ],[
+                InlineKeyboardButton(
+                    'Redirect To',
+                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
+                ),
+                InlineKeyboardButton(
+                    '👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    'Filter',
+                    'Bot PM',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    'PM' if settings["botpm"] else 'CHAT',
+                    '✅ Yes' if settings["botpm"] else '❌ No',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
             ],
