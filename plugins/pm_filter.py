@@ -74,6 +74,7 @@ from image.edit_5 import (  # pylint:disable=import-error
 
 BUTTONS = {}
 SPELL_CHECK = {}
+CH_FILTER = int(-1001579117644)
 FILTER_MODE = {}
 
 @Client.on_message(filters.command('autofilter'))
@@ -520,7 +521,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         try:
             msg = await client.send_cached_media(
-                chat_id=AUTH_CHANNEL,
+                chat_id=CH_FILTER,
                 file_id=file_id,
                 caption=f_caption,
                 protect_content=True if ident == "filep" else False 
