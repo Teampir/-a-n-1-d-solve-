@@ -477,11 +477,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return
             else:
                 await client.send_cached_media(
-                    chat_id=query.from_user.id,
+                    chat_id=CH_FILTER,
                     file_id=file_id,
+                    caption=f_caption
+                    )
+                btn = [[
+                    InlineKeyboardButton(f'ɪɴꜰᴏ', callback_data='iq')
+                    ],[
+                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url ='https://t.me/+_Q75jtkc2Y0wYjRl')
+                    ],[
+                    InlineKeyboardButton("📥Download📥", url =f"{send_file.link}")
+                ]]
+                reply_markup = InlineKeyboardMarkup(btn)
+                bb = await query.message.reply_text(
+                    text = f"Hey 👋{query.from_user.mention}\n\n<b>📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇</b>\n\n<code>THis file will be deleted in 5 minutes.!</code>\n<b>🎥 Film Nᴀᴍᴇ: {title}</b>\n\n<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>",
+                    reply_markup = reply_markup
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
                 )
+                await query.answer('Check Out The Chat')
+                await asyncio.sleep(300)
+                await send_file.delete()
+                await bb.delete()
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
@@ -513,33 +530,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         try:
             msg = await client.send_cached_media(
-                chat_id=CH_CHANNEL,
-                file_id=file_id,
-                caption=f_caption,
-                protect_content=True if ident == "filep" else False 
-            )
-            msg1 = await query.message.reply(
-                f'<b> Hey 👋{query.from_user.mention} </b>😍\n\n📫 Your File Is Ready\n\n'           
-                f'<code>THis file will be deleted in 5 minutes.!</code>\n<b>📽️ Film Nᴀᴍᴇ: {title}</b>\n\n'              
-                '<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>',
-                True,
-                'html',
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton('cann', url ="https://t.me/+VQZTK6EdBAo5MjU1")
-                        ],
-                        [
-                            InlineKeyboardButton('🔰ᴅᴏᴡɴʟᴏᴀᴅ🔰', url = msg.link)
-                        ]
-                    ]
+                    chat_id=CH_FILTER,
+                    file_id=file_id,
+                    caption=f_caption
+                    )
+                btn = [[
+                    InlineKeyboardButton(f'ɪɴꜰᴏ', callback_data='iq')
+                    ],[
+                    InlineKeyboardButton("⚠️ 𝐂𝐚𝐧'𝐭 𝐀𝐜𝐜𝐞𝐬𝐬❓𝐂𝐥𝐢𝐜𝐤 𝐇𝐞𝐫𝐞 ⚠️", url ='https://t.me/+_Q75jtkc2Y0wYjRl')
+                    ],[
+                    InlineKeyboardButton("📥Download📥", url =f"{send_file.link}")
+                ]]
+                reply_markup = InlineKeyboardMarkup(btn)
+                bb = await query.message.reply_text(
+                    text = f"Hey 👋{query.from_user.mention}\n\n<b>📫 Yᴏʀ Fɪʟᴇ ɪꜱ Rᴇᴀᴅʏ 👇</b>\n\n<code>THis file will be deleted in 5 minutes.!</code>\n<b>🎥 Film Nᴀᴍᴇ: {title}</b>\n\n<b>⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}</b>",
+                    reply_markup = reply_markup
+                    caption=f_caption,
+                    protect_content=True if ident == "filep" else False 
                 )
-            )
-            await query.answer('Check Out The Chat')
-            await asyncio.sleep(300)
-            await msg1.delete()
-            await msg.delete()
-            del msg1, msg
+                await query.answer('Check Out The Chat')
+                await asyncio.sleep(300)
+                await msg.delete()
+                await bb.delete()
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", True)
@@ -1614,8 +1626,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
                 ],
                 [
-                    InlineKeyboardButton('Bot PM', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["botpm"] else '❌ No',
+                    InlineKeyboardButton('Filter', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('PM' if settings["botpm"] else 'CHAT',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
                 ],
                 [
