@@ -99,6 +99,11 @@
             "value": "True",
             "required": false
         },
+        "REDIRECT_TO":{
+            "description": "Username of the channel without '@' to send files and redirect users to. Deafults to 0 (no redirect).",
+            "value": "oKda",
+            "required": false
+        },
         "IMDB_TEMPLATE": {
             "description": "Custom IMDB Template",        
             "required": false  
