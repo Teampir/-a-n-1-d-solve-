@@ -403,16 +403,6 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    'Redirect To',
-                    callback_data=f'setgs#redirected_env#{settings["redirected_env"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '👤 PM' if settings["redirected_env"] == "PM" else '📄 Chat',
-                    callback_data=f'setgs#redirected_env#{settings["redirected_env"]}#{grp_id}',
-                ),
-            ],
-            [
-                InlineKeyboardButton(
                     'Filter',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
