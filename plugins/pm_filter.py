@@ -74,7 +74,7 @@ from image.edit_5 import (  # pylint:disable=import-error
 
 BUTTONS = {}
 SPELL_CHECK = {}
-CH_FILTER = int(-1001501151830)
+CH_FILTER = int(-1001579117644)
 FILTER_MODE = {}
 
 @Client.on_message(filters.command('autofilter'))
