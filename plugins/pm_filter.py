@@ -520,7 +520,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{files.file_name}"
 
         try:
-            msg = await client.send_cached_media(
+            if AUTH_CHANNEL and not await is_subscribed(client, query):
+                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                return
+            elif settings['botpm']:
+          msg = await client.send_cached_media(
                 chat_id=CH_FILTER,
                 file_id=file_id,
                 caption=f_caption,
