@@ -1595,7 +1595,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     elif query.data == 'fp':
-        await query.answer("📝Here is the detail of => {query}\n\n<b>🏷 Title</b>: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n✨️ Rating: <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)\n🔈 Languages : <code>{languages}</code>\n👥 Cast : <code>{cast}</code>\n📰 Release Info : {release_date}\n🌐 Countries : <code>{countries}</code>", show_alert=True),
+        await query.answer("📝Here is the detail of => {query}\n\n👥 Cast : <code>{cast}</code>\n📰 Release Info : {release_date}\n🌐 Countries : <code>{countries}</code>", show_alert=True),
     elif query.data == 'tips':
         await query.answer("=> Ask with correct spelling\n=> Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n=> For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021", show_alert=True)
     try: await query.answer('Piracy Is Crime') 
