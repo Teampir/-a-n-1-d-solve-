@@ -1602,7 +1602,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'tips':
         await query.answer("=> Ask with correct spelling\n=> Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n=> For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021", show_alert=True)
     elif query.data == 'fp':
-        await query.answer("hshs shsbdhd dhdbdhdbdhdbdhdbdhdb", show_alert=True)
+        await query.answer("📝Here is the detail of => {query}\n\n<b>🏷 Title</b>: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n✨️ Rating: <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)\n🔈 Languages : <code>{languages}</code>\n👥 Cast : <code>{cast}</code>\n📰 Release Info : {release_date}\n🌐 Countries : <code>{countries}</code>", show_alert=True)
     try: await query.answer('Piracy Is Crime') 
     except: pass
 
@@ -1667,7 +1667,7 @@ async def auto_filter(client, msg, spoll=False):
         )
 
     btn.insert(0, [
-        InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
+        InlineKeyboardButton(f'📬ɪɴꜰᴏ', callback_data='fp'),
         InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
     ])
     btn.insert(0, [
