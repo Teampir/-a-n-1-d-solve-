@@ -495,6 +495,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await asyncio.sleep(300)
                 await send_file.delete()
                 await bb.delete()
+                await msg.reply(f"⚙️Hey {query.from_user.mention} Filter For {search} Has Closed⚙️</s>", reply_markup=button)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
         except PeerIdInvalid:
@@ -1595,6 +1596,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_reply_markup(reply_markup)
     elif query.data == 'tips':
         await query.answer("=> Ask with correct spelling\n=> Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n=> For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021", show_alert=True)
+        )
     elif query.data == 'fp':
         await query.answer("📝Here is the detail of => {query}\n\n<b>🏷 Title</b>: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n✨️ Rating: <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)\n🔈 Languages : <code>{languages}</code>\n👥 Cast : <code>{cast}</code>\n📰 Release Info : {release_date}\n🌐 Countries : <code>{countries}</code>", show_alert=True)
     try: await query.answer('Piracy Is Crime') 
