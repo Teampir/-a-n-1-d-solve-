@@ -221,7 +221,7 @@ async def next_page(bot, query):
             )
     btn.insert(0,
             [
-                InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
+                InlineKeyboardButton(f'📬ɪɴꜰᴏ', callback_data='fp'),
                 InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
             ])
 
@@ -1601,6 +1601,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_reply_markup(reply_markup)
     elif query.data == 'tips':
         await query.answer("=> Ask with correct spelling\n=> Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n=> For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021", show_alert=True)
+    elif query.data == 'fp':
+        await query.answer("hshs shsbdhd dhdbdhdbdhdbdhdbdhdb", show_alert=True)
     try: await query.answer('Piracy Is Crime') 
     except: pass
 
