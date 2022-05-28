@@ -466,6 +466,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption=f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
+    buttons = [
+        [
+            InlineKeyboardButton('🍁 Join ', url="https://t.me/FilmPiratesGroup"),
+            InlineKeyboardButton('🧩 Update', url="https://t.me/FilmPiratesOfficial")
+        ]
+        ]
             
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -1567,12 +1573,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Filter', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('PM' if settings["botpm"] else 'CHAT',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
-                ],
-                [
-                    InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
                 ],
                 [
                     InlineKeyboardButton('𝐅𝐈𝐋𝐄 𝐒𝐄𝐂𝐔𝐑𝐄',
