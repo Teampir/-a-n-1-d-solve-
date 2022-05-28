@@ -495,7 +495,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await asyncio.sleep(300)
                 await send_file.delete()
                 await bb.delete()
-                await msg.reply(f"⚙️Hey {query.from_user.mention} Filter For {search} Has Closed⚙️</s>", reply_markup=button)
+                await msg.reply(f"<b>⚙️Hey {query.from_user.mention} Filter For {search} Has Closed⚙️</b>", reply_markup=button)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
         except PeerIdInvalid:
