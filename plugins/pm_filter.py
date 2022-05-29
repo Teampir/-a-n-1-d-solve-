@@ -275,7 +275,7 @@ async def advantage_spoll_choker(bot, query):
         )
         await reply5.delete()
         await query.message.edit('Sorry 𝚃𝚑𝚒𝚜 𝙵𝚒𝚕𝚖 𝚒𝚜 𝙽𝚘𝚝 𝚒𝚗 𝙼𝚢 𝙳𝚊𝚝𝚊𝙱𝚊𝚜𝚎 𝙸 𝚠𝚒𝚕𝚕 𝚞𝚙𝚕𝚘𝚛𝚍𝚎 𝚒𝚗 72𝚑𝚘𝚞𝚛𝚜 💌')
-        await asyncio.sleep(10)
+        await asyncio.sleep(20)
         await k.delete()
 
 
@@ -498,7 +498,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 send_file = await client.send_cached_media(
                     chat_id=FILE_CHANNEL_ID,
                     file_id=file_id,
-                    caption=f"<b>𝐇𝐞𝐲 👋 {query.from_user.mention} 😍📽Film {title} ⚙Movie Size {file_size}\n\n⚠️ കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 3 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!!\n\nഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!!\nFILES FORWARD TO YOUR SAVED MESSAGES\n\nAll files here Gets Deleted With in 3 Minutes\n\n╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n♻️ 𝙅𝙊𝙄𝙉 :- @FilmPiratesOfficial\n♻️ 𝙅𝙊𝙄𝙉 :- @FilmPiratesGroup\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>"
+                    caption=f"<b>𝐇𝐞𝐲 👋 {query.from_user.mention} 📽Film {title} ⚙Movie Size {file_size}\n\n⚠️ കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 3 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!!\n\nഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക..!!\nFILES FORWARD TO YOUR SAVED MESSAGES\n\nAll files here Gets Deleted With in 3 Minutes\n\n╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n♻️ 𝙅𝙊𝙄𝙉 :- @FilmPiratesOfficial\n♻️ 𝙅𝙊𝙄𝙉 :- @FilmPiratesGroup\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>"
                     )
                 btn = [[
                     InlineKeyboardButton(f'ɪɴꜰᴏ', callback_data='tips')
@@ -515,7 +515,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await asyncio.sleep(180)
                 await send_file.delete()
                 await bb.delete()
-                await query.message.edit(f'<code>⚙️Hey {query.from_user.mention} Filter For {search} Has Closed⚙️</code>')
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
         except PeerIdInvalid:
