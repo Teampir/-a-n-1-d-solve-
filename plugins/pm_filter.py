@@ -257,23 +257,23 @@ async def advantage_spoll_choker(bot, query):
             k = reply1 = await query.message.reply_text(
             text="▬▬ ▭▭ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▭▭ ▭▭ ▭▭ ▭▭ "
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.7)
         reply2 = await reply1.edit_text(
             text="▬▬ ▬▬ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▭▭ ▭▭ ▭▭ "
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.7)
         reply3 = await reply2.edit_text(
             text="▬▬ ▬▬ ▬▬ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▭▭ ▭▭ "
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.7)
         reply4 = await reply3.edit_text(
             text="▬▬ ▬▬ ▬▬ ▬▬ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▭▭ "
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.7)
         reply5 = await reply4.edit_text(
             text="▬▬ ▬▬ ▬▬ ▬▬ ▬▬ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▬▬"
         )
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.7)
         reply6 = await reply5.edit_text(
             text="Sorry 𝚃𝚑𝚒𝚜 𝙵𝚒𝚕𝚖 𝚒𝚜 𝙽𝚘𝚝 𝚒𝚗 𝙼𝚢 𝙳𝚊𝚝𝚊𝙱𝚊𝚜𝚎 𝙸 𝚠𝚒𝚕𝚕 𝚞𝚙𝚕𝚘𝚛𝚍𝚎 𝚒𝚗 72𝚑𝚘𝚞𝚛𝚜 💌"
         )
