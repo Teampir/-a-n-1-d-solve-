@@ -1824,30 +1824,10 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    m = reply1 = await query.message.reply_text(
-    text="▬▬ ▭▭ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▭▭ ▭▭ ▭▭ ▭▭ "
-    )
-    await asyncio.sleep(1)
-    reply2 = await reply1.edit_text(
-        text="▬▬ ▬▬ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▭▭ ▭▭ ▭▭ "
-    )
-    await asyncio.sleep(1)
-    reply3 = await reply2.edit_text(
-        text="▬▬ ▬▬ ▬▬ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▭▭ ▭▭ "
-    )
-    await asyncio.sleep(1)
-    reply4 = await reply3.edit_text(
-        text="▬▬ ▬▬ ▬▬ ▬▬ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▭▭ "
-    )
-    await asyncio.sleep(1)
-    reply5 = await reply4.edit_text(
-        text="▬▬ ▬▬ ▬▬ ▬▬ ▬▬ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▬▬"
-    )
-    await reply5.delete()
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
-                reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(20)
-    await m.delete()
+    m = await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+                    reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(20)
+        await m.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
