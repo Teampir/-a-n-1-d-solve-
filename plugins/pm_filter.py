@@ -255,28 +255,28 @@ async def advantage_spoll_choker(bot, query):
             await auto_filter(bot, query, k)
         else:
             k = reply1 = await query.message.reply_text(
-            text="▬▬ ▭▭ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▭▭ ▭▭ ▭▭ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply2 = await reply1.edit_text(
-            text="▬▬ ▬▬ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▭▭ ▭▭ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply3 = await reply2.edit_text(
-            text="▬▬ ▬▬ ▬▬ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▭▭ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply4 = await reply3.edit_text(
-            text="▬▬ ▬▬ ▬▬ ▬▬ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply5 = await reply4.edit_text(
-            text="▬▬ ▬▬ ▬▬ ▬▬ ▬▬ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▬▬"
-        )
-        await reply5.delete()
-        await query.message.edit('Sorry 𝚃𝚑𝚒𝚜 𝙵𝚒𝚕𝚖 𝚒𝚜 𝙽𝚘𝚝 𝚒𝚗 𝙼𝚢 𝙳𝚊𝚝𝚊𝙱𝚊𝚜𝚎 𝙸 𝚠𝚒𝚕𝚕 𝚞𝚙𝚕𝚘𝚛𝚍𝚎 𝚒𝚗 72𝚑𝚘𝚞𝚛𝚜 💌')
-        await asyncio.sleep(15)
-        await k.delete()
+                    text="▬▬ ▭▭ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▭▭ ▭▭ ▭▭ ▭▭ "
+                )
+                await asyncio.sleep(1)
+                reply2 = await reply1.edit_text(
+                    text="▬▬ ▬▬ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▭▭ ▭▭ ▭▭ "
+                )
+                await asyncio.sleep(1)
+                reply3 = await reply2.edit_text(
+                    text="▬▬ ▬▬ ▬▬ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▭▭ ▭▭ "
+                )
+                await asyncio.sleep(1)
+                reply4 = await reply3.edit_text(
+                    text="▬▬ ▬▬ ▬▬ ▬▬ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▭▭ "
+                )
+                await asyncio.sleep(1)
+                reply5 = await reply4.edit_text(
+                    text="▬▬ ▬▬ ▬▬ ▬▬ ▬▬ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▬▬"
+                )
+                await reply5.delete()
+                await query.message.edit('Sorry 𝚃𝚑𝚒𝚜 𝙵𝚒𝚕𝚖 𝚒𝚜 𝙽𝚘𝚝 𝚒𝚗 𝙼𝚢 𝙳𝚊𝚝𝚊𝙱𝚊𝚜𝚎 𝙸 𝚠𝚒𝚕𝚕 𝚞𝚙𝚕𝚘𝚛𝚍𝚎 𝚒𝚗 72𝚑𝚘𝚞𝚛𝚜 💌')
+                await asyncio.sleep(15)
+                await k.delete()
 
 
 @Client.on_callback_query()
@@ -1756,29 +1756,29 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         k = reply1 = await query.message.reply_text(
-            text="▬▬ ▭▭ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▭▭ ▭▭ ▭▭ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply2 = await reply1.edit_text(
-            text="▬▬ ▬▬ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▭▭ ▭▭ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply3 = await reply2.edit_text(
-            text="▬▬ ▬▬ ▬▬ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▭▭ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply4 = await reply3.edit_text(
-            text="▬▬ ▬▬ ▬▬ ▬▬ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▭▭ "
-        )
-        await asyncio.sleep(1)
-        reply5 = await reply4.edit_text(
-            text="▬▬ ▬▬ ▬▬ ▬▬ ▬▬ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▬▬"
-        )
-        await reply5.delete()
-        await msg.reply("I couldn't find any movie in that name 😔.")
-        await asyncio.sleep(20)
-        await k.delete()
-        return
+                text="▬▬ ▭▭ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▭▭ ▭▭ ▭▭ ▭▭ "
+            )
+            await asyncio.sleep(1)
+            reply2 = await reply1.edit_text(
+                text="▬▬ ▬▬ ▭▭ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▭▭ ▭▭ ▭▭ "
+            )
+            await asyncio.sleep(1)
+            reply3 = await reply2.edit_text(
+                text="▬▬ ▬▬ ▬▬ ▭▭ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▭▭ ▭▭ "
+            )
+            await asyncio.sleep(1)
+            reply4 = await reply3.edit_text(
+                text="▬▬ ▬▬ ▬▬ ▬▬ ▭▭ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▭▭ "
+            )
+            await asyncio.sleep(1)
+            reply5 = await reply4.edit_text(
+                text="▬▬ ▬▬ ▬▬ ▬▬ ▬▬ \n\nSEARCHING\n\n▬▬ ▬▬ ▬▬ ▬▬ ▬▬"
+            )
+            await reply5.delete()
+            await msg.reply("I couldn't find any movie in that name 😔.")
+            await asyncio.sleep(20)
+            await k.delete()
+            return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
     gs_parsed = [re.sub(
