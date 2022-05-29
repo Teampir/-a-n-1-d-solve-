@@ -496,7 +496,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await send_file.delete()
                 await bb.delete()
                 await query.message.reply_text(
-               text = f'<code>⚙️Hey {query.from_user.mention} Filter For {search} Has Closed⚙️</code>')
+               text = f'<code>⚙️Hey {query.from_user.mention} Filter For {search} Has Closed⚙️</code>'),
                reply_markup = reply_markup
                 )
         except UserIsBlocked:
