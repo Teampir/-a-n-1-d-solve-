@@ -91,6 +91,129 @@ Note:- Give a user details
 › /song 𝚂𝙾𝙽𝙶 𝙽𝙰𝙼𝙴 
 
 ᴡᴏʀᴋ ᴏɴʟy ᴏɴ ɢʀᴏᴜᴩ"""
+    
+    WELCOME_TXT ="""Here is the help for the <b>Greetings</b> module:
+Welcome new members to your groups or say Goodbye after they leave!
+<b>Admin Commands</b>:
+× /setwelcome <reply/text>: Sets welcome text for group.
+× /welcome <yes/no/on/off>: Enables or Disables welcome setting for group.
+× /resetwelcome: Resets the welcome message to default.
+× /setgoodbye <reply/text>: Sets goodbye text for group.
+× /goodbye <yes/no/on/off>: Enables or Disables goodbye setting for group.
+× /resetgoodbye: Resets the goodbye message to default.
+× /cleanservice <yes/no/on/off>: Delete all service messages such as 'x joined the group' notification.
+× /cleanwelcome <yes/no/on/off>: Delete the old welcome message, whenever a new member joins."""
+    
+    APPROVE_TXT = """Here is the help for the <b>Approvals</b> module:
+Sometimes, you might trust a user not to send unwanted content.
+Maybe not enough to make them admin, but you might be ok with locks, blacklists, and antiflood not applying to them.
+That's what approvals are for - approve of trustworthy users to allow them to send
+<b>User commands</b>:
+× /approval: Check a user's approval status in this chat.
+<b>Admin Commands</b>:
+× /approve: Approve of a user. Locks, blacklists, and antiflood won't apply to them anymore.
+× /unapprove: Unapprove of a user. They will now be subject to locks, blacklists, and antiflood again.
+× /approved: List all approved users.
+<b>Group Owner Commands</b>:
+× /unapproveall: Unapprove ALL users in a chat. This cannot be undone."""
+    
+    TORRENT_TXT = """Help: <b>Torrent Search</b>
+<b>Commands and Usage</b>:
+• /torrent or /tor : Get Your Torrent Link From Various Resource.
+<b>NOTE:</b>
+• IMDb should have admin privillage.
+• These commands works on both pm and group.
+• These commands can be used by any group member."""
+    
+    IMG_TXT = """If You Want To Make A image Of Text send
+/hand <anything> to Get the Photo"""
+
+    FONTS_TXT = """ Want Some Stylish fonts send /font <anything>"""
+
+    BOTSTATUS_TXT = """Send /status for getting bot and heroku status"""
+
+    MAMMOKA_TXT = """𝐂𝐀𝐔𝐓𝐈𝐎𝐍 : <b>Iᴋᴋᴀ Fᴀɴs Aʀᴇ Pʀᴏʜɪʙɪᴛᴇᴅ Nᴇᴀʀ Tʜɪs ᴀʀᴇᴀ</b> 
+    
+    <b> 𝙍𝙀𝘼𝙎𝙊𝙉: </b>
+    Tʜɪs ғɪʟᴛᴇʀ ᴄᴏɴᴛᴀɪɴs ᴛᴏxɪᴄ ғᴜɴɴʏ sᴛɪᴄᴋᴇʀs 😂😂😂
+    
+    <b> 𝘾𝙊𝙈𝙈𝘼𝙉𝘿: </b> /ikka ☺☺
+    
+    """
+
+    AUNTY_TXT ="""<b>THE GREAT MALLU AUNTY</b>
+   
+ Sᴇɴᴅ /aunty, 
+ 
+ Tʜᴇɴ Mᴀʟʟᴜ Aᴜɴᴛʏ Wɪʟʟ Tᴇxᴛ Yᴏᴜ Sᴏᴍᴇ Jᴏᴋᴇs 😂😂 """
+    
+     WARN_TXT = """Here is the help for the <b>Warns</b> module:
+Keep your members in check with warnings; stop them getting out of control!
+If you're looking for automated warnings, read about the blacklist module!
+<b>Admin Commands</b>:
+- /warn <reason>: Warn a user.
+- /dwarn <reason>: Warn a user by reply, and delete their message.
+- /swarn <reason>: Silently warn a user, and delete your message.
+- /warns: See a user's warnings.
+- /rmwarn: Remove a user's latest warning.
+- /resetwarn: Reset all of a user's warnings to 0.
+- /resetallwarns: Delete all the warnings in a chat. All users return to 0 warns.
+- /warnings: Get the chat's warning settings.
+- /setwarnmode <ban/kick/mute>: Set the chat's warn mode.
+- /setwarnlimit <number>: Set the number of warnings before users are punished.
+<b>Examples</b>
+- Warn a user.
+-> /warn @user For disobeying the rules"""
+    
+    DISABLE_TXT = """Here is the help for the <b>Disabling</b> module:
+This allows you to disable some commonly used commands, so noone can use them. It'll also allow you to autodelete them, stopping people from bluetexting.
+<b>Admin commands</b>:
+× /disable <commandname>: Stop users from using commandname in this group.
+× /enable <item name>: Allow users from using commandname in this group.
+× /disableable: List all disableable commands.
+× /disabledel <yes/no/on/off>: Delete disabled commands when used by non-admins.
+× /disabled: List the disabled commands in this chat.
+<b>Note</b>:
+When disabling a command, the command only gets disabled for non-admins. All admins can still use those commands.
+Disabled commands are still accessible through the /connect feature. If you would be interested to see this disabled too, let me know in the support chat."""
+    
+    RULES_TXT = """Here is the help for the <b>Rules</b> module:
+Every chat works with different rules; this module will help make those rules clearer!
+<b>User commands</b>:
+× /rules: Check the current chat rules.
+<b>Admin commands</b>:
+× /setrules <text>: Set the rules for this chat.
+× /privaterules <yes/no/on/off>: Enable/disable whether the rules should be sent in private.
+× /resetrules: Reset the chat rules to default
+× /rulesbtn <custom text>: Sets the text of rules button.
+× /resetrulesbutton: Reset the text of rules button to default.
+× /resetrulesbtn: Same as above."""
+
+    NOTE_TXT = """Here is the help for the <b>Notes</b> module:
+Save data for future users with notes!
+Notes are great to save random tidbits of information; a phone number, a nice gif, a funny picture - anything!
+User commands:
+- /get <notename>: Get a note.
+- #notename: Same as /get.
+<b>Admin commands</b>:
+- /save <notename> <note text>: Save a new note called "word". Replying to a message will save that message. Even works on media!
+- /clear <notename>: Delete the associated note.
+- /notes: List all notes in the current chat.
+- /saved: Same as /notes.
+- /clearall: Delete ALL notes in a chat. This cannot be undone.
+- /privatenotes: Whether or not to send notes in PM. Will send a message with a button which users can click to get the note in PM."""
+
+    LOCK_TXT = """Here is the help for the <b>Locks</b> module:
+<b>Admin only</b>:
+× /lock <permission>: Lock Chat permission..
+× /unlock <permission>: Unlock Chat permission.
+× /locks: View Chat permission.
+× /locktypes: Check available lock types!
+Locks can be used to restrict a group's users.
+Locking urls will auto-delete all messages with urls, locking stickers will delete all stickers, etc.
+Locking bots will stop non-admins from adding bots to the chat.
+Example:
+/lock media: this locks all the media messages in the chat."""
     PIN_TXT ="""<b>PIN MODULE</b>
 <b>Pin A Message../</b>
 
@@ -162,13 +285,13 @@ Group Support
 <b>Note:</b>
 
 Everyone can use this command , if spaming happens bot will automatically ban you from the group."""
-    PURGE_TXT = """<b>Purge</b>
-    
-Delete A Lot Of Messages From Groups! 
-    
- <b>ADMIN</b> 
-
-◉ /purge :- Delete All Messages From The Replied To Message, To The Current Message"""
+    PURGE_TXT = """Here is the help for the <b>Purges</b> module:
+<b>Admin only</b>:
+- /purge: deletes all messages between this and the replied to message.
+- /del: deletes the message you replied to.
+<b>Examples</b>:
+- Delete all messages from the replied to message, until now.
+-> /purge"""
     BUTTON_TXT = """Help: <b>Buttons</b>
 
 -This Bot Supports both url and alert inline buttons.
