@@ -49,4 +49,5 @@ ffmpeg-python
 ffmpeg
 Pillow
 heroku3
+speedtest
 ujson
