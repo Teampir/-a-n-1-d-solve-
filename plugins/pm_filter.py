@@ -175,7 +175,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🍁[{get_size(file.file_size)}]🍁{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"🐠[{get_size(file.file_size)}🐠{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -204,19 +204,19 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("🚶‍♀️ 𝗕𝗮𝗰𝗸", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(text="🍿Update🍿", url=f"https://t.me/FilmPiratesOfficial"),
-             InlineKeyboardButton(f"📑 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}",
+             InlineKeyboardButton(f"❎️ {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"📑 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+            [InlineKeyboardButton(f"❎️ {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="🍿Update🍿", url=f"https://t.me/FilmPiratesOfficial"),
              InlineKeyboardButton("◎ᑎE᙭T◎", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("🚶‍♀️ 𝗕𝗮𝗰𝗸", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"📑 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton(f"❎️ {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("◎ᑎE᙭T◎", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0,
@@ -226,7 +226,7 @@ async def next_page(bot, query):
             ])
 
     btn.insert(0, [
-        InlineKeyboardButton(f'🍁{search}🍁', 'dupe')
+        InlineKeyboardButton(f'🐠{search}🐠', 'dupe')
     ])
     try:
         await query.edit_message_reply_markup(
@@ -1964,7 +1964,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="❄️1/1", callback_data="pages")]
+            [InlineKeyboardButton(text=❄️1/1", callback_data="pages")]
         )
 
     btn.insert(0, [
@@ -1972,7 +1972,7 @@ async def auto_filter(client, msg, spoll=False):
         InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
     ])
     btn.insert(0, [
-        InlineKeyboardButton(f'🍁{search}🍁', 'dupe')
+        InlineKeyboardButton(f'🐠{search}🐠', 'dupe')
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
@@ -2042,35 +2042,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = reply1 = await query.message.reply_text(
-        text="▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 15/100%\n▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭\nSEARCHING... 25/100%\n▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭\nSEARCHING... 50/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply5 = await reply4.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭\nSEARCHING... 75/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply6 = await reply5.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬\nSEARCHING... 100/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬"
-        )
-        await asyncio.sleep(0.5)
-        reply7 = await reply6.edit_text(
-            text="I couldn't find any movie in that name 😔"
-        )
-        await reply7.delete()
-        await msg.reply("I couldn't find any movie in that name 😔.")
+        k = await msg.reply("I couldn't find any movie in that name 😔.")
         await asyncio.sleep(20)
         await k.delete()
         return
@@ -2119,7 +2091,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    m = await msg.reply_photo("I couldn't find anything related to that\nDid you mean any one of these?",
+    m = await msg.reply_text("I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(20)
     await m.delete()
