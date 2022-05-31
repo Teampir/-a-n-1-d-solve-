@@ -2042,35 +2042,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = reply1 = await query.message.reply_text(
-        text="▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 15/100%\n▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭\nSEARCHING... 25/100%\n▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭\nSEARCHING... 50/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply5 = await reply4.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭\nSEARCHING... 75/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭"
-        )
-        await asyncio.sleep(0.5)
-        reply6 = await reply5.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬\nSEARCHING... 100/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬"
-        )
-        await asyncio.sleep(0.5)
-        reply7 = await reply6.edit_text(
-            text="I couldn't find any movie in that name 😔"
-        )
-        await reply7.delete()
-        await msg.reply("I couldn't find any movie in that name 😔.")
+        k = await msg.reply("I couldn't find any movie in that name 😔.")
         await asyncio.sleep(20)
         await k.delete()
         return
