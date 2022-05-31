@@ -7,7 +7,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CHAT_CHANNEL, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, REDIRECT_TO, \
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, PICS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, REDIRECT_TO, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, redirected_env
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
@@ -2119,7 +2119,8 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    m = await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+    m = await msg.reply_photo("I couldn't find anything related to that\nDid you mean any one of these?",
+            photo=random.choice(PICS)
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(20)
     await m.delete()
