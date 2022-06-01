@@ -254,8 +254,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg")
-        reply1 = await query.message.reply_text(
+            k = reply1 = await query.message.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", text=text)
             text="▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭ "
         )
         await asyncio.sleep(0.13)
