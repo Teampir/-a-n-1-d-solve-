@@ -253,33 +253,8 @@ async def advantage_spoll_choker(bot, query):
         if files:
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
-        else:
-            k = reply1 = await query.message.reply_text(
-            text="▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭ "
-        )
-        await asyncio.sleep(0.13)
-        reply2 = await reply1.edit_text(
-            text="▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 15/100%\n▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.13)
-        reply3 = await reply2.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭\nSEARCHING... 25/100%\n▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.13)
-        reply4 = await reply3.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭\nSEARCHING... 50/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭"
-        )
-        await asyncio.sleep(0.13)
-        reply5 = await reply4.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭\nSEARCHING... 75/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭"
-        )
-        await asyncio.sleep(0.13)
-        reply6 = await reply5.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬\nSEARCHING... 100/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬"
-        )
-        await reply7.delete()
-        await asyncio.sleep(20)
-        button = InlineKeyboardMarkup(
+        else movielist:
+            button = InlineKeyboardMarkup(
         [[
            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ɪɴ yᴏᴜʀ ɢʀᴏᴜᴩ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ],
