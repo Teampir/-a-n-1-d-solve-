@@ -259,8 +259,8 @@ async def advantage_spoll_choker(bot, query):
            InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ɪɴ yᴏᴜʀ ɢʀᴏᴜᴩ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ],
         [
-           InlineKeyboardButton("🍁IMDb🍁", url=f"Do you want to open https://www.imdb.com/"),
-           InlineKeyboardButton("🐠Google🐠", url=f"Do you want to open https://www.google.com/")
+           InlineKeyboardButton("🍁IMDb🍁", url="https://www.imdb.com/"),
+           InlineKeyboardButton("🐠Google🐠", url="https://www.google.com/")
         ]])
         k = await query.message.edit("<b>Sorry 𝚃𝚑𝚒𝚜 𝙵𝚒𝚕𝚖 𝚒𝚜 𝙽𝚘𝚝 𝚒𝚗 𝙼𝚢 𝙳𝚊𝚝𝚊𝙱𝚊𝚜𝚎 𝙸 𝚠𝚒𝚕𝚕 𝚞𝚙𝚕𝚘𝚛𝚍𝚎 𝚒𝚗 72𝚑𝚘𝚞𝚛𝚜 💌</b>", reply_markup=button)
         await asyncio.sleep(60)
