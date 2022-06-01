@@ -6,8 +6,8 @@ class script(object):
 𝖨'𝗆 𝖺 𝖥𝗋𝗂𝖾𝗇𝖽𝗅𝗒 𝗀𝗋𝗈𝗎𝗉 𝖬𝖺𝗇𝖺𝗀𝖾𝗋 Bot
 • Build Version : V2.1.0 (BETA)
 • Speciality : Movie Provider
-𝖢𝗅𝗂𝖼𝗄 Help or /help 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌."""
-    HELP_TXT = """𝗛ᴇʟʟᴏ {}"""
+𝖢𝗅𝗂𝖼𝗄 /help 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌."""
+    HELP_TXT = """𝗛ᴇʟʟᴏ {} Here is your Functions"""
     ABOUT_TXT = """<b>➥ My name: {}
 ➥ Creator: <a href='https://t.me/The_user_death'>ᴩʀᴏꜰᴇꜱᴇʀ</a>
 ➥ Library: Pyrogram
@@ -437,6 +437,8 @@ these are the extra features of this bot
     NXE_TXT = """
 𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:
 """
+
+    MAX_TXT = """ 𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:"""
 
     COR_TXT = """Creators ❤
 - Thanks To Dan For His Awesome Library
