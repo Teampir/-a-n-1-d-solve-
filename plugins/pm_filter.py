@@ -903,6 +903,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('« Back', callback_data='mod'),
             InlineKeyboardButton('Page 1', callback_data='start'),
             InlineKeyboardButton('Next', callback_data='ne')
+            ],[
+            InlineKeyboardButton('❎️MAX', callback_data='max')
         ]]
         reply1 = await query.message.reply_text(
             text="○○○"
@@ -1755,6 +1757,67 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.YTTHUMB_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "max":
+        buttons = [[
+            InlineKeyboardButton('Filters', callback_data='filter'),
+            InlineKeyboardButton('Main', callback_data='main'),
+            InlineKeyboardButton('Connection', callback_data='coct')
+            ],[
+            InlineKeyboardButton('Song', callback_data='songs'),
+            InlineKeyboardButton('INFO', callback_data='info'),
+            InlineKeyboardButton("Video", callback_data='video')
+            ],[
+            InlineKeyboardButton('PIN', callback_data='pin'), 
+            InlineKeyboardButton('Stats', callback_data='stats'),
+            InlineKeyboardButton("IMDB", callback_data='search')
+            ],[
+            InlineKeyboardButton('Fun', callback_data='fun'), 
+            InlineKeyboardButton('Json', callback_data='son'),
+            InlineKeyboardButton('TTS', callback_data='ttss')
+            ],[
+            InlineKeyboardButton('Purge', callback_data='purges'),
+            InlineKeyboardButton('Ping', callback_data='pings'),
+            InlineKeyboardButton('T-Graph', callback_data='tele')
+            ],[
+            InlineKeyboardButton('Whois', callback_data='whois'),
+            InlineKeyboardButton('Mute', callback_data='restric'),
+            InlineKeyboardButton('Kick', callback_data='zombies')
+            ],[
+            InlineKeyboardButton('Report', callback_data='report'),
+            InlineKeyboardButton('YT-Thumb', callback_data='ytthumb'),
+            InlineKeyboardButton('Sticker-id', callback_data='sticker')
+            ],[
+            InlineKeyboardButton('Covid', callback_data='corona'),
+            InlineKeyboardButton('Audio-Book', callback_data='abook'),
+            InlineKeyboardButton('URL-Short', callback_data='urlshort')
+            ],[
+            InlineKeyboardButton('G-Trans', callback_data='gtrans'),
+            InlineKeyboardButton('File-Store', callback_data='newdata'),
+            InlineKeyboardButton('Paste', callback_data='pastes')
+            ],[
+            InlineKeyboardButton('Alive', callback_data='alive'),
+            InlineKeyboardButton("Image", callback_data='image'),
+            InlineKeyboardButton("Carbon", callback_data='carbon')
+            ],[
+            InlineKeyboardButton('Lyrics', callback_data='lyrics'),
+            InlineKeyboardButton('Passward', callback_data='genpassword'),
+            InlineKeyboardButton('FONTS', callback_data='fonts')
+            ],[
+            InlineKeyboardButton('H-Stats', callback_data='restatus'),
+            InlineKeyboardButton('IKKA', callback_data='mammoka'),
+            InlineKeyboardButton('ANTY', callback_data='aunty')
+            ],[
+            InlineKeyboardButton('S-Text', callback_data='sharetext')
+            ],[
+            InlineKeyboardButton('🐠MIN', callback_data='help')    
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.MAX_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
