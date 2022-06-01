@@ -254,7 +254,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-        button = InlineKeyboardMarkup(
+            kk = button = InlineKeyboardMarkup(
         [[
            InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q={search}")
         ],
