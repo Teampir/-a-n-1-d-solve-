@@ -256,9 +256,6 @@ async def advantage_spoll_choker(bot, query):
         else:
             kk = button = InlineKeyboardMarkup(
         [[
-           InlineKeyboardButton("✅ Google ✅", url=f"https://www.google.com/search?q={search}")
-        ],
-        [
            InlineKeyboardButton("IMDb", url=f"https://www.imdb.com/find?q={search}"),
            InlineKeyboardButton("Wikipedia", url=f"https://en.m.wikipedia.org/w/index.php?search={search}")
         ]])
