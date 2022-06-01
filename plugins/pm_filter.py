@@ -2152,20 +2152,12 @@ async def advantage_spell_chok(msg):
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
         InlineKeyboardButton(
-                    text="INFO",
-                    callback_data='tips',
-                ),
-                InlineKeyboardButton(
-                    text="MOVIE",
-                    callback_data='tips',
-                ),
-            ]]
-    btn.append([[InlineKeyboardButton(
             text=movie.strip(),
             callback_data=f"spolling#{user}#{k}",
         )
-    ] for k, movie in enumerate(movielist)])
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
+    ] for k, movie in enumerate(movielist)]
+    btn.append([InlineKeyboardButton(text="🔐Close", callback_data=f'spolling#{user}#close_spellcheck'),
+                InlineKeyboardButton(text="ɪɴꜰᴏ", callback_data='tips')])
     m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(10)
