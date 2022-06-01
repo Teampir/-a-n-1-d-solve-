@@ -254,7 +254,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = reply1 = await query.message.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg",
+            k = reply1 = await query.message.reply_text(
             text="▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭ "
         )
         await asyncio.sleep(0.13)
@@ -2151,11 +2151,12 @@ async def advantage_spell_chok(msg):
         return
     SPELL_CHECK[msg.message_id] = movielist
     btn = [[
-        InlineKeyboardButton(
+        InlineKeyboardButton('INFO', callback_data='help')
+    btn.append([InlineKeyboardButton(
             text=movie.strip(),
             callback_data=f"spolling#{user}#{k}",
         )
-    ] for k, movie in enumerate(movielist)]
+    ]) for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
     m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
