@@ -291,7 +291,6 @@ async def advantage_spoll_choker(bot, query):
                 ],
             ]
         )
-    )
 
 
 @Client.on_callback_query()
