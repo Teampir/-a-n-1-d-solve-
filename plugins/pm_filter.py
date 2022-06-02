@@ -279,18 +279,16 @@ async def advantage_spoll_choker(bot, query):
                     )
                 ],
                 [
-                [
                     InlineKeyboardButton(
                         text="🍁IMDb🍁", url=f"https://www.imdb.com/"
-                    )
-                ],
-                [
+                    ),
                     InlineKeyboardButton(
                         text="🐠Google🐠", url=f"https://www.google.com/"
                     )
                 ],
             ]
         )
+    )
 
 
 @Client.on_callback_query()
