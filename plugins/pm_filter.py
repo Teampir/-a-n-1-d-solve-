@@ -258,9 +258,6 @@ async def advantage_spoll_choker(bot, query):
             text="▬▬ ▭▭ ▭▭  ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭  ▭▭ ▭▭ ▭▭"
         )
         await query.message.edit_text(
-            text="▬▬ ▬▬ ▭▭  ▭▭ ▭▭ ▭▭\nSEARCHING... 15/100%\n▬▬ ▬▬ ▭▭  ▭▭ ▭▭ ▭▭"
-        )
-        await query.message.edit_text(
             text="▬▬ ▬▬ ▬▬  ▭▭ ▭▭ ▭▭\nSEARCHING... 25/100%\n▬▬ ▬▬ ▬▬  ▭▭ ▭▭ ▭▭"
         )
         await query.message.edit_text(
@@ -2166,7 +2163,7 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton(text="ɪɴꜰᴏ", callback_data='tips')])
     m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(30)
+    await asyncio.sleep(17)
     await m.delete()
 
 async def manual_filters(client, message, text=False):
