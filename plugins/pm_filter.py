@@ -273,7 +273,7 @@ async def advantage_spoll_choker(bot, query):
             text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬\nSEARCHING... 100/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬"
         )
         await query.message.reply_text(
-            text="Sorry this file is not in my database...\nWe Will Uploard in 72Hour",
+            text="𝐇𝐞𝐲 👋 {query.from_user.mention} 🥰, This Movie is not released or not added in my database\nThis DVD Will be add in 24h",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
