@@ -2166,7 +2166,7 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton(text="ɪɴꜰᴏ", callback_data='tips')])
     m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(10)
+    await asyncio.sleep(30)
     await m.delete()
 
 async def manual_filters(client, message, text=False):
