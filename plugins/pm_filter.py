@@ -293,6 +293,7 @@ async def advantage_spoll_choker(bot, query):
                 ],
             ]
         )
+    )
         k = await query.message.edit("<b>Sorry 𝚃𝚑𝚒𝚜 𝙵𝚒𝚕𝚖 𝚒𝚜 𝙽𝚘𝚝 𝚒𝚗 𝙼𝚢 𝙳𝚊𝚝𝚊𝙱𝚊𝚜𝚎 𝙸 𝚠𝚒𝚕𝚕 𝚞𝚙𝚕𝚘𝚛𝚍𝚎 𝚒𝚗 72𝚑𝚘𝚞𝚛𝚜 💌</b>", reply_markup=reply_markup)
         await asyncio.sleep(60)
         await k.delete()
