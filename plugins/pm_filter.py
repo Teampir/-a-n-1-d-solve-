@@ -264,16 +264,13 @@ async def advantage_spoll_choker(bot, query):
             text="▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭\nSEARCHING... 25/100%\n▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭"
         )
         await query.message.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭\nSEARCHING... 50/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▭▭ ▭▭"
-        )
-        await query.message.edit_text(
             text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭\nSEARCHING... 75/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭"
         )
         await query.message.edit_text(
             text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬\nSEARCHING... 100/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬"
         )
         await query.message.reply_text(
-            text="𝐇𝐞𝐲 👋 {query.from_user.mention} 🥰, This Movie is not released or not added in my database\nThis DVD Will be add in 24h",
+            text="🧸𝐇𝐞𝐲 👋 {query.from_user.mention} 🥰, This Movie is not released or not added in my database\nThis DVD Will be add in 24h",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
