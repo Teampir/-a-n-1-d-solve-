@@ -288,7 +288,7 @@ async def advantage_spoll_choker(bot, query):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="🐠Google🐠", url=f"https://www.google.com/")
+                        text="🐠Google🐠", url=f"https://www.google.com/"
                     )
                 ],
             ]
