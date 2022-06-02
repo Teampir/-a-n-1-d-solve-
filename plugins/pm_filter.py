@@ -255,19 +255,19 @@ async def advantage_spoll_choker(bot, query):
             await auto_filter(bot, query, k)
         else:
             await query.message.edit_text(
-            text="▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭   ▭▭ ▭▭ ▭▭"
+            text="▬▬ ▭▭ ▭▭  ▭▭ ▭▭ ▭▭\nSEARCHING... 10/100%\n▬▬ ▭▭ ▭▭  ▭▭ ▭▭ ▭▭"
         )
         await query.message.edit_text(
-            text="▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭\nSEARCHING... 15/100%\n▬▬ ▬▬ ▭▭   ▭▭ ▭▭ ▭▭"
+            text="▬▬ ▬▬ ▭▭  ▭▭ ▭▭ ▭▭\nSEARCHING... 15/100%\n▬▬ ▬▬ ▭▭  ▭▭ ▭▭ ▭▭"
         )
         await query.message.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭\nSEARCHING... 25/100%\n▬▬ ▬▬ ▬▬   ▭▭ ▭▭ ▭▭"
+            text="▬▬ ▬▬ ▬▬  ▭▭ ▭▭ ▭▭\nSEARCHING... 25/100%\n▬▬ ▬▬ ▬▬  ▭▭ ▭▭ ▭▭"
         )
         await query.message.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭\nSEARCHING... 75/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▭▭"
+            text="▬▬ ▬▬ ▬▬  ▬▬ ▬▬ ▭▭\nSEARCHING... 75/100%\n▬▬ ▬▬ ▬▬  ▬▬ ▬▬ ▭▭"
         )
         await query.message.edit_text(
-            text="▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬\nSEARCHING... 100/100%\n▬▬ ▬▬ ▬▬   ▬▬ ▬▬ ▬▬"
+            text="▬▬ ▬▬ ▬▬  ▬▬ ▬▬ ▬▬\nSEARCHING... 100/100%\n▬▬ ▬▬ ▬▬  ▬▬ ▬▬ ▬▬"
         )
         await query.message.reply_text(
             text=f"🧸𝐇𝐞𝐲 👋 {query.from_user.mention} 🥰, This Movie is not released or not added in my database\nThis DVD Will be add in 24h",
