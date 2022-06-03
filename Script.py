@@ -1,7 +1,7 @@
 class script(object):
     START_TXT = """𝗛ᴇʟʟᴏ {},
 
- 𝗠ʏ 𝗡ᴀᴍᴇ ɪ𝘀 vadivelu
+ 𝗠ʏ 𝗡ᴀᴍᴇ ɪ𝘀 Murili
 
 𝖨'𝗆 𝖺 𝖥𝗋𝗂𝖾𝗇𝖽𝗅𝗒 𝗀𝗋𝗈𝗎𝗉 𝖬𝖺𝗇𝖺𝗀𝖾𝗋 Bot
 • Build Version : V2.1.0 (BETA)
