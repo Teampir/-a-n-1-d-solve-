@@ -1030,7 +1030,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('IKKA', callback_data='mammoka'),
             InlineKeyboardButton('ANTY', callback_data='aunty')
             ],[
-            InlineKeyboardButton('S-Text', callback_data='sharetext')
+            InlineKeyboardButton('S-Text', callback_data='sharetext'),
+            InlineKeyboardButton('Torant', callback_data='tor')
             ],[
             InlineKeyboardButton('« Back', callback_data='nex'),
             InlineKeyboardButton('Page 4', callback_data='start'),
@@ -1715,7 +1716,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "gtrans":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='nex'),
-            InlineKeyboardButton('𝙻𝙰𝙽𝙶 𝙲𝙾𝙳𝙴𝚂', url='https://cloud.google.com/translate/docs/languages')
+            InlineKeyboardButton('LANG CODES', url='https://cloud.google.com/translate/docs/languages')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1817,7 +1818,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('IKKA', callback_data='mammoka'),
             InlineKeyboardButton('ANTY', callback_data='aunty')
             ],[
-            InlineKeyboardButton('S-Text', callback_data='sharetext')
+            InlineKeyboardButton('S-Text', callback_data='sharetext'),
+            InlineKeyboardButton('Torant', callback_data='tor')
             ],[
             InlineKeyboardButton('🐠MIN', callback_data='help')    
         ]]
@@ -1856,6 +1858,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.FILE_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+            elif query.data == "tor":
+        buttons = [[
+            InlineKeyboardButton('« Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.TOR_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
