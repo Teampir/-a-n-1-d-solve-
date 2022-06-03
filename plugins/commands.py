@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('𝙿𝚁𝙸𝚅𝙰𝚃𝙴 𝙱𝙾𝚃', url=f"https://t.me/The_user_death")
+                InlineKeyboardButton('PRIVATE BOT', url=f"https://t.me/The_user_death")
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -222,8 +222,7 @@ async def start(client, message):
         f_caption = f"{files.file_name}"
     buttons = [
         [
-            InlineKeyboardButton('🍁 Join ', url="https://t.me/FilmPiratesGroup"),
-            InlineKeyboardButton('🧩 Update', url="https://t.me/FilmPiratesOfficial")
+            InlineKeyboardButton('🍁 Join ', url="https://t.me/FilmPiratesGroup")
         ]
         ]
     await client.send_cached_media(
@@ -347,7 +346,7 @@ async def delete_all_index(bot, message):
 @Client.on_callback_query(filters.regex(r'^autofilter_delete'))
 async def delete_all_index_confirm(bot, message):
     await Media.collection.drop()
-    await message.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+    await message.answer('PLZ SHAIR AND SUPPORT')
     await message.message.edit('Succesfully Deleted All The Indexed Files.')
 
 
@@ -467,7 +466,7 @@ async def settings(client, message):
 
 @Client.on_message(filters.command('set_template'))
 async def save_template(client, message):
-    sts = await message.reply("**𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 𝙽𝙴𝚆 𝚃𝙴𝙼𝙿𝙻𝙰𝚃𝙴**")
+    sts = await message.reply("CHECKING NEW TEMPLATE")
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
