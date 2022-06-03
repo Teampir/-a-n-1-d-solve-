@@ -55,6 +55,8 @@ _𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐌𝐞 𝐖𝐢𝐭𝐡 𝐘𝐨𝐮𝐫 𝐂�
 
 <code>/batch https://t.me/FPHDMOVE/3 https://t.me/FPHDMOVE/8</code>
 """
+
+    LYRICS_TXT ="""LYRICS Module"""
     WHOIS_TXT ="""<b>WHOIS MODULE</b>
 Note:- Give a user details
 •/whois :-give a user full details"""
