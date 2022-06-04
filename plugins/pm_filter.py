@@ -2165,8 +2165,6 @@ async def advantage_spell_chok(msg):
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
-    btn.append([InlineKeyboardButton(text="🔐Close", callback_data=f'spolling#{user}#close_spellcheck'),
-                InlineKeyboardButton(text="ɪɴꜰᴏ", callback_data='tips')])
     btn = [[
          InlineKeyboardButton(
             text=movie.strip(),
