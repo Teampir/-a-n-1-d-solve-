@@ -1981,8 +1981,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("⚠️ Information ⚠️\n\nᴀꜰᴛᴇʀ 2 ᴍɪɴɪᴜᴛ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟy ᴅᴇʟᴇᴛᴇ\n\nIf you do not see the requested\n\nmovie / series file, look at the next page\n\n©ᴀʟʟ ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴩ", show_alert=True),
     elif query.data == 'song':
         await query.answer("🐠=> ɪꜰ yᴏᴜ ɴᴇᴇᴅ ꜱᴏɴɢ ɢᴏ ᴛᴏ ʙᴏᴛ ᴩᴍ ᴀɴᴅ ᴛyᴩᴇ /song ᴡɪᴛʜ ꜱᴏɴɢ ɴᴀᴍᴇ", show_alert=True),
-    elif query.data == 'song':
-        await query.answer("🐠=> ɢᴏ ᴛᴏ ᴛʜᴇ ", show_alert=True),
+    elif query.data == 'mov':
+        await query.answer("ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➼ᴛyᴩᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➼ ᴩᴀꜱᴛᴇ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴩ\n\nᴇxᴀᴍᴩʟᴇ : Aaraattu ᴏʀ Aaraattu 2022\n\n🚯ᴅᴏɴ'ᴛ ᴜꜱᴇ ➠ ':(!,...)\n\n©ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴩ", show_alert=True),
+    elif query.data == 'ser':
+        await query.answer("ꜱᴇʀɪᴇꜱ ʀᴇqᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➼ᴛyᴩᴇ ꜱᴇʀɪᴇꜱ ɴᴀᴍᴇ ➼ ᴩᴀꜱᴛᴇ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴩ\n\nᴇxᴀᴍᴩʟᴇ : Alive or Alive S01E01\n\n🚯ᴅᴏɴ'ᴛ ᴜꜱᴇ ➠ ':(!,...)\n\n©ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴩ", show_alert=True),
     elif query.data == 'tips':
         await query.answer("=> Ask with correct spelling\n=> Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n=> For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021", show_alert=True)
     try: await query.answer('Piracy Is Crime') 
