@@ -2180,9 +2180,9 @@ async def advantage_spell_chok(msg):
     btn.append([InlineKeyboardButton(text="🔐Close", callback_data=f'spolling#{user}#close_spellcheck'),
                 InlineKeyboardButton(text="ꜱᴏɴɢ", callback_data='song')])
     btn.insert(0, [
-        InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'callback_data='mov'),
-        InlineKeyboardButton(f'ɪɴꜰᴏ', 'callback_data='fp'),
-        InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'callback_data='ser')
+        InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data='mov'),
+        InlineKeyboardButton("ɪɴꜰᴏ", callback_data='fp'),
+        InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data='ser')
     ])
     m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
