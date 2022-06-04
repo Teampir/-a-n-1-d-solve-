@@ -1978,7 +1978,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     elif query.data == 'fp':
-        await query.answer("📝Here is the detail of => {query}\n\n👥 Cast : <code>{cast}</code>\n📰 Release Info : {release_date}\n🌐 Countries : <code>{countries}</code>", show_alert=True),
+        await query.answer("⚠️ Information ⚠️\n\nᴀꜰᴛᴇʀ 2 ᴍɪɴɪᴜᴛ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟy ᴅᴇʟᴇᴛᴇ\n\nIf you do not see the requested\n\nmovie / series file, look at the next page\n\n©ᴀʟʟ ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴩ", show_alert=True),
+    elif query.data == 'song':
+        await query.answer("🐠=> ɪꜰ yᴏᴜ ɴᴇᴇᴅ ꜱᴏɴɢ ɢᴏ ᴛᴏ ʙᴏᴛ ᴩᴍ ᴀɴᴅ ᴛyᴩᴇ /song ᴡɪᴛʜ ꜱᴏɴɢ ɴᴀᴍᴇ", show_alert=True),
+    elif query.data == 'song':
+        await query.answer("🐠=> ɢᴏ ᴛᴏ ᴛʜᴇ ", show_alert=True),
     elif query.data == 'tips':
         await query.answer("=> Ask with correct spelling\n=> Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n=> For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021", show_alert=True)
     try: await query.answer('Piracy Is Crime') 
@@ -2172,7 +2176,12 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="🔐Close", callback_data=f'spolling#{user}#close_spellcheck'),
-                InlineKeyboardButton(text="ɪɴꜰᴏ", callback_data='tips')])
+                InlineKeyboardButton(text="ꜱᴏɴɢ", callback_data='song')])
+    btn.insert(0, [
+        InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'callback_data='mov'),
+        InlineKeyboardButton(f'ɪɴꜰᴏ', 'callback_data='fp'),
+        InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'callback_data='ser')
+    ])
     m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(17)
