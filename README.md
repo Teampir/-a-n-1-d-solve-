@@ -1,5 +1,5 @@
 
-<summary>Deploy To Heroku</summary>
+<summary>Deploy Heroku</summary>
 <br>
 <p>
 <a href="https://heroku.com/deploy?template=https://github.com/Teampir/-a-n-1-d-solve-">
