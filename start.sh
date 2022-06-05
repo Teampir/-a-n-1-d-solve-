@@ -1,7 +1,7 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/Distenyteam/ql.git /Ajax
+  git clone https://github.com/Teampir/-a-n-1-d-solve-.git /Ajax
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
   git clone $UPSTREAM_REPO /Ajax
