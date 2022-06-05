@@ -1,7 +1,7 @@
 class script(object):
     START_TXT = """𝗛ᴇʟʟᴏ {},
 
- 𝗠ʏ 𝗡ᴀᴍᴇ ɪ𝘀 Murili
+ 𝗠ʏ 𝗡ᴀᴍᴇ ɪ𝘀 Heast
 
 𝖨'𝗆 𝖺 𝖥𝗋𝗂𝖾𝗇𝖽𝗅𝗒 𝗀𝗋𝗈𝗎𝗉 𝖬𝖺𝗇𝖺𝗀𝖾𝗋 Bot
 • Build Version : V2.1.0 (BETA)
@@ -99,7 +99,7 @@ Note:- Give a user details
 <b>Commands and Usage</b>:
 • /torrent or /tor : Get Your Torrent Link From Various Resource.
 <b>NOTE:</b>
-• IMDb should have admin privillage.
+• Heast should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
     
