@@ -44,7 +44,7 @@ async def start(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_photo(
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            photo=random.choice(PICS),
+            photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg",
             reply_markup=reply_markup,
             parse_mode='html'
         )
