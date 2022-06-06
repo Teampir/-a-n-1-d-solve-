@@ -209,18 +209,18 @@ async def next_page(bot, query):
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"❎️ {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("◎ᑎE᙭T◎", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("ꁴ𝙽𝙴𝚇𝚃ꁴ", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("🚶‍♀️ 𝗕𝗮𝗰𝗸", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"❎️ {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("◎ᑎE᙭T◎", callback_data=f"next_{req}_{key}_{n_offset}")]
+                InlineKeyboardButton("ꁴ𝙽𝙴𝚇𝚃ꁴ", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0,
             [
-                InlineKeyboardButton(f'🎭{search}🎭', 'dupe'),
-                InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
+                InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe'),
+                InlineKeyboardButton('🧩ɪɴꜰᴏ', callback_data='tem')
             ])
 
     btn.insert(0, [
@@ -1984,7 +1984,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'song':
         await query.answer("🐠=> ɪꜰ yᴏᴜ ɴᴇᴇᴅ ꜱᴏɴɢ ɢᴏ ᴛᴏ ʙᴏᴛ ᴩᴍ ᴀɴᴅ ᴛyᴩᴇ /song ᴡɪᴛʜ ꜱᴏɴɢ ɴᴀᴍᴇ", show_alert=True),
     elif query.data == 'tem':
-        await query.answer(f"📽️Film : <a href={url}>{title}</a>\n📰 Release Info : {release_date}\n🎛 Countries : <code>{countries}</code>\n🌟 R𝖆†𝖎𝖓𝖌: <a href={url}/ratings>{rating}</a> / 10\n𝙎𝙩𝙤𝙧𝙮 : <code>{plot}</code>\n🎙️ℓ𝖆𝖓𝖌𝖚𝖆𝖌𝖊𝖘 : <code>{languages}</code>", show_alert=True),
+        await query.answer("🐠Hi Friend This File Will Delete in 2 Minite Plz Forward the File to you SaveMessage🧩", show_alert=True),
     elif query.data == 'mov':
         await query.answer("ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➼ᴛyᴩᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➼ ᴩᴀꜱᴛᴇ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴩ\n\nᴇxᴀᴍᴩʟᴇ : Aaraattu ᴏʀ Aaraattu 2022\n\n🚯ᴅᴏɴ'ᴛ ᴜꜱᴇ ➠ ':(!,...)\n\n©ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴩ", show_alert=True),
     elif query.data == 'ser':
@@ -2046,7 +2046,7 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"❄️1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="◎ᑎE᙭T◎", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="ꁴ𝙽𝙴𝚇𝚃ꁴ", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
@@ -2055,7 +2055,7 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0, [
         InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe'),
-        InlineKeyboardButton("ɪɴꜰᴏ", callback_data='tem')
+        InlineKeyboardButton(f'🎭{search}🎭', 'dupe'),
     ])
     btn.insert(0, [
         InlineKeyboardButton(f'🐠{search}🐠', 'dupe')
@@ -2187,7 +2187,7 @@ async def advantage_spell_chok(msg):
         InlineKeyboardButton("ɪɴꜰᴏ", callback_data='fp'),
         InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data='ser')
     ])
-    m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
+    m = await msg.reply_photo(photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg", caption=f"📍Hey, {msg.from_user.mention} I couldn't find anything related to that\nDid you mean any one of these?",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(17)
     await m.delete()
