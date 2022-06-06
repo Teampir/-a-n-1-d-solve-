@@ -175,7 +175,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🐠[{get_size(file.file_size)}🐠{file.file_name}", callback_data=f'{pre}#{file.file_id}#{query.from_user.id}'
+                    text=f"🐠[{get_size(file.file_size)}🐠{file.file_name}", callback_data=f'{req}#{file.file_id}#{query.from_user.id}'
                 ),
             ]
             for file in files
@@ -184,11 +184,11 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", callback_data=f'{pre}#{file.file_id}#{query.from_user.id}'
+                    text=f"{file.file_name}", callback_data=f'{req}#{file.file_id}#{query.from_user.id}'
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                    callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}',
+                    callback_data=f'{req}_#{file.file_id}#{query.from_user.id}',
                 ),
             ]
             for file in files
@@ -477,9 +477,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     if query.data.startswith("file"):
         FILE_CHANNEL_ID = int(-1001579117644)
-        ident, file_id, pre = query.data.split("#")
+        ident, file_id, req = query.data.split("#")
 
-        if int(pre) not in [query.from_user.id, 0]:
+        if int(req) not in [query.from_user.id, 0]:
             return await query.answer("⚠️ Bro, search your on file, don't click others request file🥵.  ⚠️Bro മറ്റുള്ളവർ റിക്വസ്റ്റ് ചെയ്ത മൂവിയിൽ കുത്തി നോക്കാതെ ഡ്രോയിങ് വേണ്ടത് ബ്രോ റിക്വസ്റ്റ് ചെയ്യുക🤒.", show_alert=True)
 
         files_ = await get_file_details(file_id)
@@ -2020,7 +2020,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🐠[{get_size(file.file_size)}]🐠{file.file_name}", callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}'
+                    text=f"🐠[{get_size(file.file_size)}]🐠{file.file_name}", callback_data=f'{req}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}'
                 ),
             ]
             for file in files
@@ -2030,11 +2030,11 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton(
                     text=f"{file.file_name}",
-                    callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
+                    callback_data=f'{req}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                    callback_data=f'{pre}_#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
+                    callback_data=f'{req}_#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
                 ),
             ]
             for file in files
