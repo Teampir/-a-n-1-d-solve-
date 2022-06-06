@@ -1983,6 +1983,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("⚠️ Information ⚠️\n\nᴀꜰᴛᴇʀ 2 ᴍɪɴɪᴜᴛ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟy ᴅᴇʟᴇᴛᴇ\n\nIf you do not see the requested\n\nmovie / series file, look at the next page\n\n©ᴀʟʟ ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴩ", show_alert=True),
     elif query.data == 'song':
         await query.answer("🐠=> ɪꜰ yᴏᴜ ɴᴇᴇᴅ ꜱᴏɴɢ ɢᴏ ᴛᴏ ʙᴏᴛ ᴩᴍ ᴀɴᴅ ᴛyᴩᴇ /song ᴡɪᴛʜ ꜱᴏɴɢ ɴᴀᴍᴇ", show_alert=True),
+    elif query.data == 'tem':
+        await query.answer(f"📽️Film : <a href={url}>{title}</a>\n📰 Release Info : {release_date}\n🎛 Countries : <code>{countries}</code>\n🌟 R𝖆†𝖎𝖓𝖌: <a href={url}/ratings>{rating}</a> / 10\n𝙎𝙩𝙤𝙧𝙮 : <code>{plot}</code>\n🎙️ℓ𝖆𝖓𝖌𝖚𝖆𝖌𝖊𝖘 : <code>{languages}</code>", show_alert=True),
     elif query.data == 'mov':
         await query.answer("ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➼ᴛyᴩᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➼ ᴩᴀꜱᴛᴇ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴩ\n\nᴇxᴀᴍᴩʟᴇ : Aaraattu ᴏʀ Aaraattu 2022\n\n🚯ᴅᴏɴ'ᴛ ᴜꜱᴇ ➠ ':(!,...)\n\n©ᴍᴏᴠɪᴇꜱ ɢʀᴏᴜᴩ", show_alert=True),
     elif query.data == 'ser':
@@ -2052,8 +2054,8 @@ async def auto_filter(client, msg, spoll=False):
         )
 
     btn.insert(0, [
-        InlineKeyboardButton(f'🎭{search}🎭', 'dupe'),
-        InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe')
+        InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe'),
+        InlineKeyboardButton("ɪɴꜰᴏ", callback_data='tem')
     ])
     btn.insert(0, [
         InlineKeyboardButton(f'🐠{search}🐠', 'dupe')
@@ -2238,4 +2240,4 @@ async def manual_filters(client, message, text=False):
     else:
         return False
 
-#ᗩᒍᗩ᙭
+#PIRATE
