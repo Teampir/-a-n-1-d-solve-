@@ -56,7 +56,6 @@ _𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐌𝐞 𝐖𝐢𝐭𝐡 𝐘𝐨𝐮𝐫 𝐂�
 <code>/batch https://t.me/FPHDMOVE/3 https://t.me/FPHDMOVE/8</code>
 """
 
-    LYRICS_TXT ="""LYRICS Module"""
     
     WHOIS_TXT ="""<b>WHOIS MODULE</b>
 Note:- Give a user details
@@ -69,7 +68,9 @@ Note:- Give a user details
 𝟤. /Throw 𝗈𝗋 /Dart - To Make Dart
 3. /Runs - Some Random Dialogues
 4. /Goal or /Shoot - To Make A Goal Or Shoot
-5. /luck or /cownd - Spin And Try Your Luck"""
+5. /ikka - Fun with ikka
+6. /luck or /cownd - Spin And Try Your Luck
+7. /aunty - Chat or Fun with anty"""
     DEPLOY_TXT = """ 😏 Sorry bro """
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
@@ -110,20 +111,6 @@ Note:- Give a user details
 
     BOTSTATUS_TXT = """Send /status for getting bot and heroku status"""
 
-    MAMMOKA_TXT = """𝐂𝐀𝐔𝐓𝐈𝐎𝐍 : <b>Iᴋᴋᴀ Fᴀɴs Aʀᴇ Pʀᴏʜɪʙɪᴛᴇᴅ Nᴇᴀʀ Tʜɪs ᴀʀᴇᴀ</b> 
-    
-    <b> 𝙍𝙀𝘼𝙎𝙊𝙉: </b>
-    Tʜɪs ғɪʟᴛᴇʀ ᴄᴏɴᴛᴀɪɴs ᴛᴏxɪᴄ ғᴜɴɴʏ sᴛɪᴄᴋᴇʀs 😂😂😂
-    
-    <b> 𝘾𝙊𝙈𝙈𝘼𝙉𝘿: </b> /ikka ☺☺
-    
-    """
-
-    AUNTY_TXT ="""<b>THE GREAT MALLU AUNTY</b>
-   
- Sᴇɴᴅ /aunty, 
- 
- Tʜᴇɴ Mᴀʟʟᴜ Aᴜɴᴛʏ Wɪʟʟ Tᴇxᴛ Yᴏᴜ Sᴏᴍᴇ Jᴏᴋᴇs 😂😂 """
     
     PIN_TXT ="""<b>PIN MODULE</b>
 <b>Pin A Message../</b>
@@ -183,19 +170,6 @@ Do as you wish with telegra.ph module!
 <b>› With Your Ownership</b>
 <b>› CONTACT ME <a href=https://t.me/The_user_death>ᴩʀᴏꜰᴇꜱᴇʀ</a></b>"""
 
-    JSON_TXT ="""<b>JSON:</b>
-
-Bot returns json for all replied messages with /json
-
-<b>Features:</b>
-
-Message Editting JSON
-Pm Support
-Group Support
-
-<b>Note:</b>
-
-Everyone can use this command , if spaming happens bot will automatically ban you from the group."""
     PURGE_TXT = """Here is the help for the <b>Purges</b> module:
 <b>Admin only</b>:
 - /purge: deletes all messages between this and the replied to message.
