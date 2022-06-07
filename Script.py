@@ -109,8 +109,6 @@ Note:- Give a user details
 
     FONTS_TXT = """ Want Some Stylish fonts send /font <anything>"""
 
-    BOTSTATUS_TXT = """Send /status for getting bot and heroku status"""
-
     
     PIN_TXT ="""<b>PIN MODULE</b>
 <b>Pin A Message../</b>
@@ -245,6 +243,7 @@ This module only works for my admins
 <b>Commands and Usage:</b>
 • /logs - <code>to get the rescent errors</code>
 • /stats - <code>to get status of files in db.</code>
+• /status - For getting bot and heroku status
 • /delete - <code>to delete a specific file from db.</code>
 • /users - <code>to get list of my users and ids.</code>
 • /chats - <code>to get list of the my chats and ids </code>
