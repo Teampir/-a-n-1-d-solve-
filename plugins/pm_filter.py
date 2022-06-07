@@ -935,7 +935,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "ne":
         buttons = [[
             InlineKeyboardButton('Fun', callback_data='fun'), 
-            InlineKeyboardButton('Json', callback_data='son'),
+            InlineKeyboardButton('Torant', callback_data='tor'),
             InlineKeyboardButton('TTS', callback_data='ttss')
             ],[
             InlineKeyboardButton('Purge', callback_data='purges'),
@@ -1020,16 +1020,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Image", callback_data='image'),
             InlineKeyboardButton("Carbon", callback_data='carbon')
             ],[
-            InlineKeyboardButton('Lyrics', callback_data='lyrics'),
+            InlineKeyboardButton('S-Text', callback_data='sharetext'),
             InlineKeyboardButton('Passward', callback_data='genpassword'),
             InlineKeyboardButton('FONTS', callback_data='fonts')
-            ],[
-            InlineKeyboardButton('H-Stats', callback_data='restatus'),
-            InlineKeyboardButton('IKKA', callback_data='mammoka'),
-            InlineKeyboardButton('ANTY', callback_data='aunty')
-            ],[
-            InlineKeyboardButton('S-Text', callback_data='sharetext'),
-            InlineKeyboardButton('Torant', callback_data='tor')
             ],[
             InlineKeyboardButton('« Back', callback_data='nex'),
             InlineKeyboardButton('Page 4', callback_data='start'),
@@ -1227,10 +1220,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.WHOIS_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
-        )
-    elif query.data == "iq":
-        await query.message.edit_text("Test", show_alert=True)
-     
+        )   
     elif query.data == "corona":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='nex')
@@ -1294,70 +1284,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "son":
-        buttons = [[
-            InlineKeyboardButton('« Back', callback_data='ne')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.JSON_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "ip":
-        buttons = [[
-            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
-        ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.IP_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "lyrics":
-        buttons = [[
-            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
-        ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.LYRICS_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
     elif query.data == "fonts":
         buttons = [[
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
@@ -1385,87 +1311,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "restatus":
-        buttons = [[
-            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
-        ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.BOTSTATUS_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "mammoka":
-        buttons = [[
-            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
-        ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.MAMMOKA_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "aunty":
-        buttons = [[
-            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
-        ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.AUNTY_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
     elif query.data == "lock":
         buttons = [[
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
@@ -1489,33 +1334,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.LOCK_TXT,
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "welcome":
-        buttons = [[
-            InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
-        ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.WELCOME_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -1781,7 +1599,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("IMDB", callback_data='search')
             ],[
             InlineKeyboardButton('Fun', callback_data='fun'), 
-            InlineKeyboardButton('Json', callback_data='son'),
+            InlineKeyboardButton('S-Text', callback_data='sharetext'),
             InlineKeyboardButton('TTS', callback_data='ttss')
             ],[
             InlineKeyboardButton('Purge', callback_data='purges'),
@@ -1808,16 +1626,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Image", callback_data='image'),
             InlineKeyboardButton("Carbon", callback_data='carbon')
             ],[
-            InlineKeyboardButton('Lyrics', callback_data='lyrics'),
+            InlineKeyboardButton('Torant', callback_data='tor'),
             InlineKeyboardButton('Passward', callback_data='genpassword'),
             InlineKeyboardButton('FONTS', callback_data='fonts')
-            ],[
-            InlineKeyboardButton('H-Stats', callback_data='restatus'),
-            InlineKeyboardButton('IKKA', callback_data='mammoka'),
-            InlineKeyboardButton('ANTY', callback_data='aunty')
-            ],[
-            InlineKeyboardButton('S-Text', callback_data='sharetext'),
-            InlineKeyboardButton('Torant', callback_data='tor')
             ],[
             InlineKeyboardButton('🐠MIN', callback_data='help')    
         ]]
@@ -1911,7 +1722,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help'),
-            InlineKeyboardButton('𝚁𝙴𝙵𝚁𝙴𝚂𝙷', callback_data='rfrsh')
+            InlineKeyboardButton('Refresh', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
