@@ -148,7 +148,7 @@ async def who_is(client, message):
 @Client.on_message(filters.command("help"))
 async def help(client, message):
         buttons = [[
-            InlineKeyboardButton('🛠️Tools', callback_data='help')
+            InlineKeyboardButton('🛠️Tools', callback_data='mod')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
