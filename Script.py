@@ -60,6 +60,9 @@ _𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐌𝐞 𝐖𝐢𝐭𝐡 𝐘𝐨𝐮𝐫 𝐂�
     WHOIS_TXT ="""<b>WHOIS MODULE</b>
 Note:- Give a user details
 •/whois :-give a user full details"""
+    CLONE_TXT ="""<b>CLONE MODULE</b>
+Note:- This Function Help To Clone BOt Like This And Also Develope Bot As Your Wish
+•/clone - Help To Clone This Bot"""
     FUN_TXT ="""<b>Gᴀᴍᴇs</b> 
     
 <b>Some dank for fun or whatever!</b>
@@ -165,8 +168,7 @@ Do as you wish with telegra.ph module!
     PRIVATEBOT_TXT = """<b>PRIVATE BOT FOR YOU</b>
 <b>› Do You Want A Bot Like This </b>
 <b>› With All Your Creadets</b>
-<b>› With Your Ownership</b>
-<b>› CONTACT ME <a href=https://t.me/The_user_death>ᴩʀᴏꜰᴇꜱᴇʀ</a></b>"""
+<b>› With Your Ownership</b>"""
 
     PURGE_TXT = """Here is the help for the <b>Purges</b> module:
 <b>Admin only</b>:
