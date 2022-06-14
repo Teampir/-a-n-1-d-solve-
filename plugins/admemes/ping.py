@@ -11,7 +11,7 @@ from plugins.helper_functions.cust_p_filters import f_onw_fliter
 ALIVE = "ചത്തിട്ടില്ല മുത്തേ ഇവിടെ തന്നെ ഉണ്ട്..😇  എങ്കിലും ചുമ്മാ ഒന്ന് /help ചെയ്തു നോക്ക്..🙂" 
 REPO = "Sorry This bot is  Not a open source bot"
 CHANNEL = "⚙️"
-PIRATE = "PM This User @PiratesDeveloper, For A perfect Clone Of This Bot And Clone OF Any AutoFilter Bot You Like"
+PIRATE = "Hi, Guys I'am a Developer, If You Need A Bot Like This => PM ME @PiratesDeveloper I Will Also Develope Bot Like Mallu_Movies/ProSearch bot and We Will Also Develope Bot As Your Wish😇"
 # -- Constants End -- #
 
 
