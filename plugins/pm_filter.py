@@ -1026,6 +1026,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Passward', callback_data='genpassword'),
             InlineKeyboardButton('FONTS', callback_data='fonts')
             ],[
+            InlineKeyboardButton('CLONE', callback_data='clone')
+            ],[
             InlineKeyboardButton('« Back', callback_data='nex'),
             InlineKeyboardButton('Page 4', callback_data='start'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
@@ -1230,6 +1232,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.CORONA_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "clone":
+        buttons = [[
+            InlineKeyboardButton('« Back', callback_data='nex')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CLONE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
@@ -1631,6 +1644,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Torant', callback_data='tor'),
             InlineKeyboardButton('Passward', callback_data='genpassword'),
             InlineKeyboardButton('FONTS', callback_data='fonts')
+            ],[
+            InlineKeyboardButton('CLONE', callback_data='clone')
             ],[
             InlineKeyboardButton('🐠MIN', callback_data='help')    
         ]]
