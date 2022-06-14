@@ -11,7 +11,7 @@ from plugins.helper_functions.cust_p_filters import f_onw_fliter
 ALIVE = "ചത്തിട്ടില്ല മുത്തേ ഇവിടെ തന്നെ ഉണ്ട്..😇  എങ്കിലും ചുമ്മാ ഒന്ന് /help ചെയ്തു നോക്ക്..🙂" 
 REPO = "Sorry This bot is  Not a open source bot"
 CHANNEL = "⚙️"
-PIRATES = ""
+PIRATE = "PM This User @PiratesDeveloper, For A perfect Clone Of This Bot And Clone OF Any AutoFilter Bot You Like"
 # -- Constants End -- #
 
 
@@ -37,6 +37,14 @@ async def repo(_, message):
 @Client.on_message(filters.command("group", COMMAND_HAND_LER) & f_onw_fliter)
 async def group(_, message):
     await message.reply_text(GROUP)
+    
+    
+@Client.on_message(filters.command("clone", COMMAND_HAND_LER) & f_onw_fliter)
+async def check_alive(_, message):
+    await message.reply_text(PIRATE)
+
+
+
 
 
 
