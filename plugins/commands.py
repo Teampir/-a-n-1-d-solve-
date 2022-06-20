@@ -43,7 +43,23 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('⚙️HELP', callback_data='mod'),
             InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
-        ]]         
+        ]]  
+        reply1 = await query.message.reply_text(
+            text="○○○"
+        )
+        await asyncio.sleep(0.1)
+        reply2 = await reply1.edit_text(
+            text="⦿○○"
+        )
+        await asyncio.sleep(0.1)
+        reply3 = await reply2.edit_text(
+            text="⦿⦿○"
+        )
+        await asyncio.sleep(0.1)
+        reply4 = await reply3.edit_text(
+            text="⦿⦿⦿"
+        )
+        await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_photo(
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -82,6 +98,22 @@ async def start(client, message):
             InlineKeyboardButton('⚙️HELP', callback_data='mod'),
             InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
+        reply1 = await query.message.reply_text(
+            text="○○○"
+        )
+        await asyncio.sleep(0.1)
+        reply2 = await reply1.edit_text(
+            text="⦿○○"
+        )
+        await asyncio.sleep(0.1)
+        reply3 = await reply2.edit_text(
+            text="⦿⦿○"
+        )
+        await asyncio.sleep(0.1)
+        reply4 = await reply3.edit_text(
+            text="⦿⦿⦿"
+        )
+        await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_photo(
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
