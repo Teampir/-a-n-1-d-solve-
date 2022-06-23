@@ -43,30 +43,31 @@ async def start(client, message):
             ],[
             InlineKeyboardButton('⚙️HELP', callback_data='mod'),
             InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
-        ]]  
-        reply1 = await query.message.reply_text(
-            text="○○○"
-        )
-        await asyncio.sleep(0.1)
-        reply2 = await reply1.edit_text(
-            text="⦿○○"
-        )
-        await asyncio.sleep(0.1)
-        reply3 = await reply2.edit_text(
-            text="⦿⦿○"
-        )
-        await asyncio.sleep(0.1)
-        reply4 = await reply3.edit_text(
-            text="⦿⦿⦿"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)        
-        await message.reply_photo(
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg",
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        if not PIC:
+            await message.reply(
+                script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
+        else:
+            await message.reply_photo(
+                photo=PIC,
+                caption=script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
@@ -98,29 +99,30 @@ async def start(client, message):
             InlineKeyboardButton('⚙️HELP', callback_data='mod'),
             InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
-        reply1 = await query.message.reply_text(
-            text="○○○"
-        )
-        await asyncio.sleep(0.1)
-        reply2 = await reply1.edit_text(
-            text="⦿○○"
-        )
-        await asyncio.sleep(0.1)
-        reply3 = await reply2.edit_text(
-            text="⦿⦿○"
-        )
-        await asyncio.sleep(0.1)
-        reply4 = await reply3.edit_text(
-            text="⦿⦿⦿"
-        )
-        await reply4.delete()
-        reply_markup = InlineKeyboardMarkup(buttons)        
-        await message.reply_photo(
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            photo="https://telegra.ph/file/d72ee300dd67e81fc930e.jpg",
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        if not PIC:
+            await message.reply(
+                script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
+        else:
+            await message.reply_photo(
+                photo=PIC,
+                caption=script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
         return
     data = message.command[1]
     try:
