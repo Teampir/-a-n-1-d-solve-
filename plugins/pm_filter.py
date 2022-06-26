@@ -468,7 +468,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         grp_id = query.message.chat.id
         i = query.data.split(":")[1]
         keyword = query.data.split(":")[2]
-        reply_sticker('CAACAgQAAxkBAAECr4hiKhTf1qJEeLctIJCsrxk2k5BPmQADEgAC4oetNCxmTn2LSYe8HgQ', btn, alerts, fileid = await find_filter(grp_id, keyword)
+        reply_sticker('CAACAgQAAxkBAAECr4hiKhTf1qJEeLctIJCsrxk2k5BPmQADEgAC4oetNCxmTn2LSYe8HgQ'), btn, alerts, fileid = await find_filter(grp_id, keyword)
         if alerts is not None:
             alerts = ast.literal_eval(alerts)
             alert = alerts[int(i)]
