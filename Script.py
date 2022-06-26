@@ -6,7 +6,7 @@ class script(object):
 𝖨'𝗆 𝖺 𝖥𝗋𝗂𝖾𝗇𝖽𝗅𝗒 𝗀𝗋𝗈𝗎𝗉 𝖬𝖺𝗇𝖺𝗀𝖾𝗋 Bot
 • Build Version : V2.1.0 (BETA)
 • Speciality : Movie Provider
-𝖢𝗅𝗂𝖼𝗄 /help 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌."""
+𝖢𝗅𝗂𝖼𝗄 /help OR Help Button 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌."""
     HELP_TXT = """𝗛ᴇʟʟᴏ {} Here is your Functions"""
     ABOUT_TXT = """<b>➥ My name: {}
 ➥ Creator: <a href='https://t.me/sangeeth006'>S-DEVIL</a>
@@ -14,7 +14,7 @@ class script(object):
 ➥ Language: Python 𝟹
 ➥ Data Base: MongoDB
 ➥ Bot Server: Heroku
-➥ Build Status: v2.0.1 [ Beta ]"""
+➥ Build Status: v2.1.0 [ Beta ]"""
     DONATION_TXT = """<b>𝐃𝐨𝐧𝐚𝐭𝐢𝐨𝐧 & 𝐏𝐚𝐢𝐝 𝐏𝐫𝐨𝐦𝐨𝐭𝐢𝐨𝐧</b> 
 
 ›› <b>𝐃𝐨𝐧𝐚𝐭𝐢𝐨𝐧</b>
