@@ -244,7 +244,8 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("ɪ ᴛʜɪɴᴋ ᴛʜɪꜱ ʟɪɴᴋ ʜᴀꜱ ᴇxᴩʀᴀɪᴅ yᴩᴜ ɴᴇᴇᴅ ᴛᴏ ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ 🙂.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('ᴄʜᴇᴄᴋɪɴɢ ꜰɪʟᴇ ɪɴ ᴍy ᴅᴀᴛᴀʙᴀꜱᴇ ആ സിനിമ എന്റെ യിൽ ഉണ്ടോ എന്ന്  നോക്കട്ടെ...')
+    await query.answer('ᴄʜᴇᴄᴋɪɴɢ ꜰɪʟᴇ ɪɴ ᴍy ᴅᴀᴛᴀʙᴀꜱᴇ.../')
+    await query.message.reply_sticker('CAACAgQAAxkBAAECr4hiKhTf1qJEeLctIJCsrxk2k5BPmQADEgAC4oetNCxmTn2LSYe8HgQ')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -473,9 +474,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alerts = ast.literal_eval(alerts)
             alert = alerts[int(i)]
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
-            await query.answer(alert,show_alert=True)
-            await query.message.reply_sticker(
-            'CAACAgQAAxkBAAECr4hiKhTf1qJEeLctIJCsrxk2k5BPmQADEgAC4oetNCxmTn2LSYe8HgQ')
+            await query.message.reply_sticker('CAACAgQAAxkBAAECr4hiKhTf1qJEeLctIJCsrxk2k5BPmQADEgAC4oetNCxmTn2LSYe8HgQ')
 
     if query.data.startswith("file"):
         FILE_CHANNEL_ID = int(-1001579117644)
@@ -2091,6 +2090,7 @@ async def manual_filters(client, message, text=False):
                         )
                 except Exception as e:
                     logger.exception(e)
+                await asyncio.sleep(120)
                 break
     else:
         return False
