@@ -45,7 +45,7 @@ async def start(client, message):
             InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        if not PIC:
+        if not PICS:
             await message.reply(
                 script.START_TXT.format(
                     (message.from_user.mention if 
@@ -58,7 +58,7 @@ async def start(client, message):
             )
         else:
             await message.reply_photo(
-                photo=PIC,
+                photo=PICS,
                 caption=script.START_TXT.format(
                     (message.from_user.mention if 
                     message.from_user else 
@@ -100,7 +100,7 @@ async def start(client, message):
             InlineKeyboardButton('🥵ᴀʙᴏᴜᴛ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        if not PIC:
+        if not PICS:
             await message.reply(
                 script.START_TXT.format(
                     (message.from_user.mention if 
@@ -113,7 +113,7 @@ async def start(client, message):
             )
         else:
             await message.reply_photo(
-                photo=PIC,
+                photo=PICS,
                 caption=script.START_TXT.format(
                     (message.from_user.mention if 
                     message.from_user else 
