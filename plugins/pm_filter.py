@@ -1861,6 +1861,7 @@ async def auto_filter(client, msg, spoll=False):
                     await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
                     return
         else:
+            await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
             return
     else:
         settings = await get_settings(msg.message.chat.id)
