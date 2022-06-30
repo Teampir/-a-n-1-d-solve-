@@ -476,10 +476,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alert = alerts[int(i)]
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
             await query.answer(alert, show_alert=True)
-        m = await query.message.reply_sticker(sticker='CAACAgUAAxkBAAIIzWK9wmZSiQN5wYLauCvQtC7a1O0rAAITCAACp9HIVA6oKX23md8bHgQ')
-            await asyncio.sleep(3)
-            await m.delete()
-            await message.delete()
 
     if query.data.startswith("file"):
         FILE_CHANNEL_ID = int(-1001579117644)
