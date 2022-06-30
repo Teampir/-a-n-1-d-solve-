@@ -233,7 +233,6 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-    await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
     
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
@@ -803,6 +802,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
+        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ɪɴ yᴏᴜʀ ɢʀᴏᴜᴩ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
@@ -836,7 +836,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.delete()
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
