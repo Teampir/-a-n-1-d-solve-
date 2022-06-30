@@ -232,6 +232,9 @@ async def next_page(bot, query):
         )
     except MessageNotModified:
         pass
+    await query.answer()
+    await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
+    
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
@@ -473,7 +476,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alerts = ast.literal_eval(alerts)
             alert = alerts[int(i)]
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
-            await query.message.reply_sticker('CAACAgQAAxkBAAECr4hiKhTf1qJEeLctIJCsrxk2k5BPmQADEgAC4oetNCxmTn2LSYe8HgQ')
+            await query.answer(alert, show_alert=True)
 
     if query.data.startswith("file"):
         FILE_CHANNEL_ID = int(-1001579117644)
