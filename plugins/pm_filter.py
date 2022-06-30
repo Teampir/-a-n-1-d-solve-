@@ -1079,7 +1079,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about_menu":
         buttons= [[
-            InlineKeyboardButton('Source', allback_data='sorce'),
+            InlineKeyboardButton('Source', allback_data='clone'),
             InlineKeyboardButton('INFO', callback_data='cor')
             ],[
             InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴 🏠', callback_data='start'),
@@ -1299,16 +1299,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.FUN_TXT,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
-    elif query.data == "sorce":
-        buttons = [[
-            InlineKeyboardButton('« Back', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.SORCE_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
