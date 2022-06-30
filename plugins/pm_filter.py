@@ -501,7 +501,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             mention = f"{query.from_user.mention}"
         buttons = [
             [
-                InlineKeyboardButton('CLICK-ME', url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                InlineKeyboardButton('📥DIRECT-DOWNLOAD📥', url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
             ]
             ]
       
@@ -825,6 +825,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.delete()
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -1078,7 +1079,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about_menu":
         buttons= [[
-            InlineKeyboardButton('Source', url='https://t.me/FilmPiratesOfficial'),
+            InlineKeyboardButton('Source', allback_data='sorce'),
             InlineKeyboardButton('INFO', callback_data='cor')
             ],[
             InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴 🏠', callback_data='start'),
@@ -1298,6 +1299,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.FUN_TXT,
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "sorce":
+        buttons = [[
+            InlineKeyboardButton('« Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.SORCE_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -1858,10 +1869,8 @@ async def auto_filter(client, msg, spoll=False):
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:
-                    await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
                     return
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
             return
     else:
         settings = await get_settings(msg.message.chat.id)
@@ -1912,6 +1921,7 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, [
         InlineKeyboardButton(f'🐠{search}🐠', 'dupe')
     ])
+    loarding = await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
