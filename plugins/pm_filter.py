@@ -810,7 +810,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
         ]]
-        await query.message.delete()
         reply1 = await query.message.reply_text(
             text="▣▢▢▢▢▢"
         )
