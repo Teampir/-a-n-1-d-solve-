@@ -227,6 +227,7 @@ async def next_page(bot, query):
         InlineKeyboardButton(f'🐠{search}🐠', 'dupe')
     ])
     try:
+        await query.message.reply_sticker(sticker='CAACAgUAAxkBAAIIzWK9wmZSiQN5wYLauCvQtC7a1O0rAAITCAACp9HIVA6oKX23md8bHgQ')
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
         )
