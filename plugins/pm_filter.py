@@ -802,7 +802,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
-        await query.message.delete()
         buttons = [[
             InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ɪɴ yᴏᴜʀ ɢʀᴏᴜᴩ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
@@ -811,6 +810,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('🔍 ꜱᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
         ]]
+        await query.message.delete()
         reply1 = await query.message.reply_text(
             text="▣▢▢▢▢▢"
         )
