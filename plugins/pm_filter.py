@@ -1985,7 +1985,7 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"<b>Hey 👋 {message.from_user.mention}.😍\n\n📁 Found ✨ {len(files)} Files For Your Query : #{search} 👇</s>"
     if imdb and imdb.get('poster'):
         try:
-            m=await message.reply_sticker("CAACAgUAAxkBAAPLYhmLeQjtiqPZJEHOFh4KFOjbWzcAAvgDAAKfRIlXnd2oxpsLJeYeBA")
+            m=await message.reply_sticker("CAACAgUAAxkBAAIIzWK9wmZSiQN5wYLauCvQtC7a1O0rAAITCAACp9HIVA6oKX23md8bHgQ")
             await asyncio.sleep(1)
             await m.delete()
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
@@ -1996,7 +1996,7 @@ async def auto_filter(client, msg, spoll=False):
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            m=await message.reply_sticker("CAACAgUAAxkBAAPLYhmLeQjtiqPZJEHOFh4KFOjbWzcAAvgDAAKfRIlXnd2oxpsLJeYeBA")
+            m=await message.reply_sticker("CAACAgUAAxkBAAIIzWK9wmZSiQN5wYLauCvQtC7a1O0rAAITCAACp9HIVA6oKX23md8bHgQ")
             await asyncio.sleep(1)
             await m.delete()
             hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
@@ -2006,7 +2006,7 @@ async def auto_filter(client, msg, spoll=False):
             await message.reply(f"<b>⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️</b>")
         except Exception as e:
             logger.exception(e)
-            m=await message.reply_sticker("CAACAgUAAxkBAAPLYhmLeQjtiqPZJEHOFh4KFOjbWzcAAvgDAAKfRIlXnd2oxpsLJeYeBA")
+            m=await message.reply_sticker("CAACAgUAAxkBAAIIzWK9wmZSiQN5wYLauCvQtC7a1O0rAAITCAACp9HIVA6oKX23md8bHgQ")
             await asyncio.sleep(1)
             await m.delete()
             fek = await message.reply_photo(photo="https://telegra.ph/file/ac686300a29c508ebf234.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -2015,7 +2015,7 @@ async def auto_filter(client, msg, spoll=False):
             await msg.delete()
             await message.reply(f"<b>⚙️ {message.from_user.mention} Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️</b>")
     else:
-        m=await message.reply_sticker("CAACAgUAAxkBAAPLYhmLeQjtiqPZJEHOFh4KFOjbWzcAAvgDAAKfRIlXnd2oxpsLJeYeBA")
+        m=await message.reply_sticker("CAACAgUAAxkBAAIIzWK9wmZSiQN5wYLauCvQtC7a1O0rAAITCAACp9HIVA6oKX23md8bHgQ")
         await asyncio.sleep(1)
         await m.delete()
         fuk = await message.reply_photo(photo="https://telegra.ph/file/ac686300a29c508ebf234.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
