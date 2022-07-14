@@ -85,7 +85,7 @@ async def fil_mod(client, message):
       try: 
          args = message.text.split(None, 1)[1].lower() 
       except: 
-         return await message.reply("**ɪɴᴄᴏᴍᴩʟᴇᴛᴇ ᴄᴏᴍᴍᴀɴᴅ...**")
+         return await message.reply("**ɪɴᴄᴏᴍᴩʟᴇᴛᴇ ᴄᴏᴍᴍᴀɴᴅ...\nUSE :- /autofilter on OR /autofilter off**")
       
       m = await message.reply("**ꜱᴇᴛᴛɪɴɢ...**")
 
@@ -97,7 +97,7 @@ async def fil_mod(client, message):
           FILTER_MODE[str(message.chat.id)] = "False"
           await m.edit("**ᴀᴜᴛᴏꜰɪʟᴛᴇʀ ᴅɪꜱᴀʙʟᴇᴅ**")
       else:
-          await m.edit("𝚄𝚂𝙴 :- /autofilter on 𝙾𝚁 /autofilter off")
+          await m.edit("USE :- /autofilter on 𝙾𝚁 /autofilter off")
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client,message):
