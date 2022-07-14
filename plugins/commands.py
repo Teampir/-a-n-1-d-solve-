@@ -50,7 +50,7 @@ async def start(client, message):
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_chat_action("typing")
-        await message.reply_photo("https://telegra.ph/file/d72ee300dd67e81fc930e.jpg")
+        await message.reply_photo("https://telegra.ph/file/b73fe842745021726b7ff.jpg")
         await message.reply_text(
             text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -93,7 +93,7 @@ async def start(client, message):
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_chat_action("typing")
-        await message.reply_photo("https://telegra.ph/file/d72ee300dd67e81fc930e.jpg")
+        await message.reply_photo("https://telegra.ph/file/b73fe842745021726b7ff.jpg")
         await message.reply_text(
             text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
