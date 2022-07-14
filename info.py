@@ -54,7 +54,7 @@ BOT_TOKEN = environ['BOT_TOKEN']
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS' ,'https://telegra.ph/file/3d87cdb638b5444198c59.jpg https://telegra.ph/file/2140af3c0cb1c848ef5a0.jpg https://telegra.ph/file/f5c3720b2ce9d1d97d59f.jpg https://telegra.ph/file/e67137996688342d75f1e.jpg')).split()
+PICS = (environ.get('PICS' ,'https://telegra.ph/file/e67137996688342d75f1e.jpg')).split()
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
@@ -90,14 +90,14 @@ DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 CHAT_CHANNEL = int(environ.get('CHAT_CHANNEL', 0))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TeamEvamaria')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'FilmPiratesOfficial')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 P_TTI_SHOW_ON = is_enabled((environ.get('P_TTI_SHOW_ON', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "False")), False)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", None)
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "Hey👋 {message.from_user.mention} Ⴤᴏᴜʀ 𝙼𝚘ᴠᴇ\n\n≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖\n📽️Film : <a href={url}>{title}</a>\n🎭 G𝖊𝖓𝖗𝖊𝖘: {genres}\n📰 Release Info : {release_date}\n🎛 Countries : <code>{countries}</code>\n🌟 R𝖆†𝖎𝖓𝖌: <a href={url}/ratings>{rating}</a> / 10\n🎙️ℓ𝖆𝖓𝖌𝖚𝖆𝖌𝖊𝖘 : <code>{languages}</code>\n≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖≖\n\n🐠PΩШΣRΣD By => {message.chat.title}")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "Hey👋 {message.from_user.mention} Ⴤᴏᴜʀ 𝙼𝚘ᴠᴇ\n\n●●●●●●●●●●●●●●●●●●●\n📽️Film : <a href={url}>{title}</a>\n🎭 G𝖊𝖓𝖗𝖊𝖘: {genres}\n📰 Release Info : {release_date}\n🎛 Countries : <code>{countries}</code>\n🌟 R𝖆†𝖎𝖓𝖌: <a href={url}/ratings>{rating}</a> / 10\n🎙️ℓ𝖆𝖓𝖌𝖚𝖆𝖌𝖊𝖘 : <code>{languages}</code>\n●●●●●●●●●●●●●●●●●●●\n\n🐠PΩШΣRΣD By => {message.chat.title}")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
